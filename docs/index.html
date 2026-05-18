@@ -116,31 +116,29 @@ Como Usar</h1>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md4"></a>
 1. Configuração do Objeto</h2>
 <p>Defina uma instância da estrutura <span class="tt"><a class="el" href="structlcd__t.html" title="Estrutura de controle (Handle) do objeto LCD.">lcd_t</a></span> e forneça as funções de ponte para I2C e tempo:</p>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="lcd__i2c_8h.html">lcd_i2c.h</a>&quot;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="comment">// Exemplo de função de escrita I2C</span></div>
-<div class="line">int8_t i2c_wrapper(uint8_t addr, uint8_t data) {</div>
-<div class="line">    <span class="keywordflow">return</span> (twi_master_write(addr, &amp;data, 1) == TWI_OK) ? 0 : -1;</div>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &quot;twi.h&quot;</span></div>
+<div class="line"><span class="preprocessor">#include &quot;<a class="code" href="lcd__i2c_8h.html">lcd_i2c.h</a>&quot;</span></div>
+<div class="line"><span class="comment">// 1. Criamos as pontes de hardware</span></div>
+<div class="line">int8_t bridge_i2c(uint8_t addr, uint8_t data) {</div>
+<div class="line">    <span class="keywordflow">return</span> (twi_write_byte(addr, data) == TWI_OK) ? 0 : -1;</div>
 <div class="line">}</div>
-<div class="line"> </div>
-<div class="line"><span class="comment">// Exemplo de função de delay</span></div>
-<div class="line"><span class="keywordtype">void</span> delay_wrapper(uint16_t ms) {</div>
+<div class="line"><span class="keywordtype">void</span> bridge_delay(uint16_t ms) {</div>
 <div class="line">    <span class="keywordflow">while</span>(ms--) _delay_ms(1);</div>
 <div class="line">}</div>
-<div class="line"> </div>
 <div class="line"><span class="keywordtype">int</span> <a class="code hl_function" href="example_8c.html#a840291bc02cba5474a4cb46a9b9566fe">main</a>() {</div>
-<div class="line">    <a class="code hl_struct" href="structlcd__t.html">lcd_t</a> lcd = {</div>
-<div class="line">        .address = 0x27,</div>
-<div class="line">        .columns = 16,</div>
-<div class="line">        .rows = 2,</div>
-<div class="line">        .backlight = <a class="code hl_enumvalue" href="lcd__i2c__types_8h.html#a5aabac5c461d4e5e3a061d712cf46c87a2e325be9b04f7628f3d194d1c005fd7b">LCD_BACKLIGHT_ON</a>,</div>
-<div class="line">        .i2c_write = i2c_wrapper,</div>
-<div class="line">        .delay_ms = delay_wrapper</div>
-<div class="line">    };</div>
-<div class="line"> </div>
-<div class="line">    <span class="keywordflow">if</span> (<a class="code hl_function" href="lcd__i2c_8h.html#a6f89a9147025038e681d0dc32dd978fc">lcd_init</a>(&amp;lcd) == <a class="code hl_enumvalue" href="lcd__i2c__types_8h.html#aea357e33cccf8705623584ab00bd7bacab4ae24c39f9cff11aff86d245c3e28ce">LCD_OK</a>) {</div>
-<div class="line">        <a class="code hl_function" href="lcd__i2c_8h.html#ae48661d1148057da43e0599cb2c4cc1d">lcd_write_string</a>(&amp;lcd, <span class="stringliteral">&quot;Ola, AVR!&quot;</span>);</div>
+<div class="line">    <span class="comment">// 2. Criamos e configuramos o objeto (Handle)</span></div>
+<div class="line">    <a class="code hl_struct" href="structlcd__t.html">lcd_t</a> lcd1;</div>
+<div class="line">    lcd1.<a class="code hl_variable" href="structlcd__t.html#a6cbf2c73ec29d386c82d732c2927b35e">address</a> = 0x27;</div>
+<div class="line">    lcd1.<a class="code hl_variable" href="structlcd__t.html#ad28aac56c3c01ac1676321f544e94e8d">columns</a> = 16;</div>
+<div class="line">    lcd1.<a class="code hl_variable" href="structlcd__t.html#ac8b3d24e81b5311e023652d913680d94">rows</a> = 2;</div>
+<div class="line">    lcd1.<a class="code hl_variable" href="structlcd__t.html#a60553ffac94d7144cbd2ec3014a9fc13">backlight</a> = <a class="code hl_enumvalue" href="lcd__i2c__types_8h.html#a5aabac5c461d4e5e3a061d712cf46c87a2e325be9b04f7628f3d194d1c005fd7b">LCD_BACKLIGHT_ON</a>;</div>
+<div class="line">    lcd1.<a class="code hl_variable" href="structlcd__t.html#a44fddc0a2568be9e444bd4668d7464fb">i2c_write</a> = bridge_i2c; <span class="comment">// Injeção da função I2C</span></div>
+<div class="line">    lcd1.<a class="code hl_variable" href="structlcd__t.html#a1d2266eb51b2ee936d9ada7fe35d3568">delay_ms</a> = bridge_delay; <span class="comment">// Injeção da função Delay</span></div>
+<div class="line">    <span class="comment">// 3. Inicializamos</span></div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code hl_function" href="lcd__i2c_8h.html#a6f89a9147025038e681d0dc32dd978fc">lcd_init</a>(&amp;lcd1) == <a class="code hl_enumvalue" href="lcd__i2c__types_8h.html#aea357e33cccf8705623584ab00bd7bacab4ae24c39f9cff11aff86d245c3e28ce">LCD_OK</a>) {</div>
+<div class="line">        <a class="code hl_function" href="lcd__i2c_8h.html#ae48661d1148057da43e0599cb2c4cc1d">lcd_write_string</a>(&amp;lcd1, <span class="stringliteral">&quot;Status: OK!&quot;</span>);</div>
 <div class="line">    }</div>
+<div class="line">    <span class="keywordflow">while</span>(1);</div>
 <div class="line">}</div>
 <div class="ttc" id="aexample_8c_html_a840291bc02cba5474a4cb46a9b9566fe"><div class="ttname"><a href="example_8c.html#a840291bc02cba5474a4cb46a9b9566fe">main</a></div><div class="ttdeci">int main(void)</div><div class="ttdoc">Ponto de entrada principal da aplicação.</div><div class="ttdef"><b>Definição</b> example.c:60</div></div>
 <div class="ttc" id="alcd__i2c_8h_html"><div class="ttname"><a href="lcd__i2c_8h.html">lcd_i2c.h</a></div><div class="ttdoc">API pública para controle de displays LCD via interface I2C (PCF8574).</div></div>
@@ -149,6 +147,12 @@ Como Usar</h1>
 <div class="ttc" id="alcd__i2c__types_8h_html_a5aabac5c461d4e5e3a061d712cf46c87a2e325be9b04f7628f3d194d1c005fd7b"><div class="ttname"><a href="lcd__i2c__types_8h.html#a5aabac5c461d4e5e3a061d712cf46c87a2e325be9b04f7628f3d194d1c005fd7b">LCD_BACKLIGHT_ON</a></div><div class="ttdeci">@ LCD_BACKLIGHT_ON</div><div class="ttdef"><b>Definição</b> lcd_i2c_types.h:37</div></div>
 <div class="ttc" id="alcd__i2c__types_8h_html_aea357e33cccf8705623584ab00bd7bacab4ae24c39f9cff11aff86d245c3e28ce"><div class="ttname"><a href="lcd__i2c__types_8h.html#aea357e33cccf8705623584ab00bd7bacab4ae24c39f9cff11aff86d245c3e28ce">LCD_OK</a></div><div class="ttdeci">@ LCD_OK</div><div class="ttdef"><b>Definição</b> lcd_i2c_types.h:24</div></div>
 <div class="ttc" id="astructlcd__t_html"><div class="ttname"><a href="structlcd__t.html">lcd_t</a></div><div class="ttdoc">Estrutura de controle (Handle) do objeto LCD.</div><div class="ttdef"><b>Definição</b> lcd_i2c_types.h:58</div></div>
+<div class="ttc" id="astructlcd__t_html_a1d2266eb51b2ee936d9ada7fe35d3568"><div class="ttname"><a href="structlcd__t.html#a1d2266eb51b2ee936d9ada7fe35d3568">lcd_t::delay_ms</a></div><div class="ttdeci">void(* delay_ms)(uint16_t ms)</div><div class="ttdoc">Ponteiro para função de atraso em milissegundos. Utilizado para garantir a temporização correta duran...</div><div class="ttdef"><b>Definição</b> lcd_i2c_types.h:76</div></div>
+<div class="ttc" id="astructlcd__t_html_a44fddc0a2568be9e444bd4668d7464fb"><div class="ttname"><a href="structlcd__t.html#a44fddc0a2568be9e444bd4668d7464fb">lcd_t::i2c_write</a></div><div class="ttdeci">lcd_i2c_write_ptr i2c_write</div><div class="ttdoc">Ponteiro para a função de escrita I2C da HAL. Deve ser preenchido pelo usuário antes da inicialização...</div><div class="ttdef"><b>Definição</b> lcd_i2c_types.h:70</div></div>
+<div class="ttc" id="astructlcd__t_html_a60553ffac94d7144cbd2ec3014a9fc13"><div class="ttname"><a href="structlcd__t.html#a60553ffac94d7144cbd2ec3014a9fc13">lcd_t::backlight</a></div><div class="ttdeci">lcd_backlight_t backlight</div><div class="ttdef"><b>Definição</b> lcd_i2c_types.h:64</div></div>
+<div class="ttc" id="astructlcd__t_html_a6cbf2c73ec29d386c82d732c2927b35e"><div class="ttname"><a href="structlcd__t.html#a6cbf2c73ec29d386c82d732c2927b35e">lcd_t::address</a></div><div class="ttdeci">uint8_t address</div><div class="ttdef"><b>Definição</b> lcd_i2c_types.h:59</div></div>
+<div class="ttc" id="astructlcd__t_html_ac8b3d24e81b5311e023652d913680d94"><div class="ttname"><a href="structlcd__t.html#ac8b3d24e81b5311e023652d913680d94">lcd_t::rows</a></div><div class="ttdeci">uint8_t rows</div><div class="ttdef"><b>Definição</b> lcd_i2c_types.h:61</div></div>
+<div class="ttc" id="astructlcd__t_html_ad28aac56c3c01ac1676321f544e94e8d"><div class="ttname"><a href="structlcd__t.html#ad28aac56c3c01ac1676321f544e94e8d">lcd_t::columns</a></div><div class="ttdeci">uint8_t columns</div><div class="ttdef"><b>Definição</b> lcd_i2c_types.h:60</div></div>
 </div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md5"></a>
 2. Exemplo Incluso</h2>
 <ol type="1">

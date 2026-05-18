@@ -26,31 +26,29 @@ Uma biblioteca C leve, robusta e extensível para controlar displays LCD (HD4478
 Defina uma instância da estrutura `lcd_t` e forneça as funções de ponte para I2C e tempo:
 
 ```c
+#include "twi.h"
 #include "lcd_i2c.h"
-
-// Exemplo de função de escrita I2C
-int8_t i2c_wrapper(uint8_t addr, uint8_t data) {
-    return (twi_master_write(addr, &data, 1) == TWI_OK) ? 0 : -1;
+// 1. Criamos as pontes de hardware
+int8_t bridge_i2c(uint8_t addr, uint8_t data) {
+    return (twi_write_byte(addr, data) == TWI_OK) ? 0 : -1;
 }
-
-// Exemplo de função de delay
-void delay_wrapper(uint16_t ms) {
+void bridge_delay(uint16_t ms) {
     while(ms--) _delay_ms(1);
 }
-
 int main() {
-    lcd_t lcd = {
-        .address = 0x27,
-        .columns = 16,
-        .rows = 2,
-        .backlight = LCD_BACKLIGHT_ON,
-        .i2c_write = i2c_wrapper,
-        .delay_ms = delay_wrapper
-    };
-
-    if (lcd_init(&lcd) == LCD_OK) {
-        lcd_write_string(&lcd, "Ola, AVR!");
+    // 2. Criamos e configuramos o objeto (Handle)
+    lcd_t lcd1;
+    lcd1.address = 0x27;
+    lcd1.columns = 16;
+    lcd1.rows = 2;
+    lcd1.backlight = LCD_BACKLIGHT_ON;
+    lcd1.i2c_write = bridge_i2c; // Injeção da função I2C
+    lcd1.delay_ms = bridge_delay; // Injeção da função Delay
+    // 3. Inicializamos
+    if (lcd_init(&lcd1) == LCD_OK) {
+        lcd_write_string(&lcd1, "Status: OK!");
     }
+    while(1);
 }
 ```
 
