@@ -1,0 +1,390 @@
+<!-- HTML header for doxygen 1.16.1-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-BR">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.16.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta charset="utf-8">
+<title>AVR LCD I2C Library (PCF8574): Referência do Arquivo example/example.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="stylesheet.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+  <table cellspacing="0" cellpadding="0">
+   <tbody>
+   <tr style="height: 56px;">
+    <td id="projectalign" style="padding-left: 0.5em;">
+     <div id="projectname">AVR LCD I2C Library (PCF8574) - YouTube: Ciência Elétrica</div>
+     <div id="projectbrief">Biblioteca para Microcontroladores AVR</div>
+    </td>
+   </tr>
+   </tbody>
+  </table>
+  </div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.16.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Busca',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('example_8c.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Carregando...</div>
+<div class="SRStatus" id="Searching">Procurando...</div>
+<div class="SRStatus" id="NoMatches">Nenhuma entrada encontrado</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Referência do Arquivo example.c</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;avr/io.h&gt;</code><br />
+<code>#include &lt;avr/interrupt.h&gt;</code><br />
+<code>#include &lt;util/delay.h&gt;</code><br />
+<code>#include &lt;stdint.h&gt;</code><br />
+<code>#include &quot;twi.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="lcd__i2c_8h_source.html">lcd_i2c.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Gráfico de dependência de inclusões para example.c:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="example_8c__incl.svg" width="100%" height="496"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-define-members" class="groupheader"><a id="define-members" name="define-members"></a>
+Definições e Macros</h2></td></tr>
+<tr class="memitem:a43bafb28b29491ec7f871319b5a3b2f8" id="r_a43bafb28b29491ec7f871319b5a3b2f8"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a43bafb28b29491ec7f871319b5a3b2f8">F_CPU</a>&#160;&#160;&#160;16000000UL</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Funções</h2></td></tr>
+<tr class="memitem:a1449614ce53eb03f6d2dded93cc6d03b" id="r_a1449614ce53eb03f6d2dded93cc6d03b"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a1449614ce53eb03f6d2dded93cc6d03b">on_twi_complete</a> (TWI_Status_t status, const uint8_t *data, size_t length)</td></tr>
+<tr class="memdesc:a1449614ce53eb03f6d2dded93cc6d03b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback de interrupção do driver TWI. Chamado automaticamente quando uma transmissão I2C é finalizada.  <br /></td></tr>
+<tr class="memitem:a3ad8fe5813ce14841ad693dc09f3da6f" id="r_a3ad8fe5813ce14841ad693dc09f3da6f"><td class="memItemLeft">int8_t&#160;</td><td class="memItemRight"><a class="el" href="#a3ad8fe5813ce14841ad693dc09f3da6f">my_i2c_write</a> (uint8_t addr, uint8_t data)</td></tr>
+<tr class="memdesc:a3ad8fe5813ce14841ad693dc09f3da6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ponte I2C para a biblioteca LCD.  <br /></td></tr>
+<tr class="memitem:a2cb7775f336a7cd8c195258bdcddd5ad" id="r_a2cb7775f336a7cd8c195258bdcddd5ad"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a2cb7775f336a7cd8c195258bdcddd5ad">my_delay_ms</a> (uint16_t ms)</td></tr>
+<tr class="memdesc:a2cb7775f336a7cd8c195258bdcddd5ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ponte de Tempo (Delay).  <br /></td></tr>
+<tr class="memitem:a840291bc02cba5474a4cb46a9b9566fe" id="r_a840291bc02cba5474a4cb46a9b9566fe"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a840291bc02cba5474a4cb46a9b9566fe">main</a> (void)</td></tr>
+<tr class="memdesc:a840291bc02cba5474a4cb46a9b9566fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ponto de entrada principal da aplicação.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-var-members" class="groupheader"><a id="var-members" name="var-members"></a>
+Variáveis</h2></td></tr>
+<tr class="memitem:a444cb63f21134eeceb68b0aada2cf064" id="r_a444cb63f21134eeceb68b0aada2cf064"><td class="memItemLeft">volatile uint8_t&#160;</td><td class="memItemRight"><a class="el" href="#a444cb63f21134eeceb68b0aada2cf064">twi_busy</a> = 0</td></tr>
+<tr class="memdesc:a444cb63f21134eeceb68b0aada2cf064"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flag de controle de fluxo para o barramento TWI.  <br /></td></tr>
+<tr class="memitem:a323f5c8076bcc1d2f1ff2c9c8cf2fb07" id="r_a323f5c8076bcc1d2f1ff2c9c8cf2fb07"><td class="memItemLeft"><a class="el" href="structlcd__t.html">lcd_t</a>&#160;</td><td class="memItemRight"><a class="el" href="#a323f5c8076bcc1d2f1ff2c9c8cf2fb07">display</a></td></tr>
+<tr class="memdesc:a323f5c8076bcc1d2f1ff2c9c8cf2fb07"><td class="mdescLeft">&#160;</td><td class="mdescRight">Instância global do LCD (Objeto de controle).  <br /></td></tr>
+<tr id="var-members-0" class="groupHeader"><td colspan="2"><div class="groupHeader">Definição de Caracteres Customizados</div></td></tr>
+<tr><td colspan="2" class="ititle"><div class="groupText"><p>Matrizes de pixels 5x8 para ícones personalizados. </p>
+</div></td></tr>
+<tr class="memitem:a06eb0b802bf229b0413c594aa7f61e86" id="r_a06eb0b802bf229b0413c594aa7f61e86"><td class="memItemLeft">uint8_t&#160;</td><td class="memItemRight"><a class="el" href="#a06eb0b802bf229b0413c594aa7f61e86">icone_bateria</a> [8]</td></tr>
+<tr class="memdesc:a06eb0b802bf229b0413c594aa7f61e86"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ícone de bateria com carga parcial.  <br /></td></tr>
+<tr class="memitem:a64c2c4190f4937cb5c482b29f95e79c4" id="r_a64c2c4190f4937cb5c482b29f95e79c4"><td class="memItemLeft">uint8_t&#160;</td><td class="memItemRight"><a class="el" href="#a64c2c4190f4937cb5c482b29f95e79c4">bloco_cheio</a> [8]</td></tr>
+<tr class="memdesc:a64c2c4190f4937cb5c482b29f95e79c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bloco sólido preenchido para barras de progresso.  <br /></td></tr>
+</table>
+<a name="doc-define-members" id="doc-define-members"></a><h2 id="header-doc-define-members" class="groupheader">Definições e macros</h2>
+<a id="a43bafb28b29491ec7f871319b5a3b2f8" name="a43bafb28b29491ec7f871319b5a3b2f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a43bafb28b29491ec7f871319b5a3b2f8">&#9670;&#160;</a></span>F_CPU</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define F_CPU&#160;&#160;&#160;16000000UL</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Funções</h2>
+<a id="a840291bc02cba5474a4cb46a9b9566fe" name="a840291bc02cba5474a4cb46a9b9566fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a840291bc02cba5474a4cb46a9b9566fe">&#9670;&#160;</a></span>main()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int main </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Ponto de entrada principal da aplicação. </p>
+<p>&mdash; Linha 1: Título e Ícone &mdash;</p>
+<dl class="section examples"><dt>Exemplos</dt><dd><a class="el" href="example_8c-example.html#a8">example.c</a>.</dd>
+</dl>
+<div class="dynheader">
+Este é o diagrama das funções utilizadas por essa função:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="example_8c_a840291bc02cba5474a4cb46a9b9566fe_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a id="a2cb7775f336a7cd8c195258bdcddd5ad" name="a2cb7775f336a7cd8c195258bdcddd5ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2cb7775f336a7cd8c195258bdcddd5ad">&#9670;&#160;</a></span>my_delay_ms()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void my_delay_ms </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>ms</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Ponte de Tempo (Delay). </p>
+<p>Converte a função macro util/delay.h em uma função de tempo dinâmico aceitável pela estrutura <a class="el" href="structlcd__t.html" title="Estrutura de controle (Handle) do objeto LCD.">lcd_t</a>.</p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ms</td><td>Tempo de espera em milissegundos. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section examples"><dt>Exemplos</dt><dd><a class="el" href="example_8c-example.html#a7">example.c</a>.</dd>
+</dl>
+<div class="dynheader">
+Esse é o diagrama das funções que utilizam essa função:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="example_8c_a2cb7775f336a7cd8c195258bdcddd5ad_icgraph.svg" width="211" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="a3ad8fe5813ce14841ad693dc09f3da6f" name="a3ad8fe5813ce14841ad693dc09f3da6f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ad8fe5813ce14841ad693dc09f3da6f">&#9670;&#160;</a></span>my_i2c_write()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int8_t my_i2c_write </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>addr</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>data</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Ponte I2C para a biblioteca LCD. </p>
+<p>Implementa uma escrita bloqueante simples para garantir que os comandos do LCD sejam processados na ordem correta.</p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">addr</td><td>Endereço do PCF8574 no barramento. </td></tr>
+    <tr><td class="paramname">data</td><td>Byte a ser enviado. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>0 para sucesso, -1 para erro. </dd></dl>
+<dl class="section examples"><dt>Exemplos</dt><dd><a class="el" href="example_8c-example.html#a6">example.c</a>.</dd>
+</dl>
+<div class="dynheader">
+Esse é o diagrama das funções que utilizam essa função:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="example_8c_a3ad8fe5813ce14841ad693dc09f3da6f_icgraph.svg" width="207" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="a1449614ce53eb03f6d2dded93cc6d03b" name="a1449614ce53eb03f6d2dded93cc6d03b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1449614ce53eb03f6d2dded93cc6d03b">&#9670;&#160;</a></span>on_twi_complete()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void on_twi_complete </td>
+          <td>(</td>
+          <td class="paramtype">TWI_Status_t</td>          <td class="paramname"><span class="paramname"><em>status</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint8_t *</td>          <td class="paramname"><span class="paramname"><em>data</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>length</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Callback de interrupção do driver TWI. Chamado automaticamente quando uma transmissão I2C é finalizada. </p>
+<dl class="section examples"><dt>Exemplos</dt><dd><a class="el" href="example_8c-example.html#a5">example.c</a>.</dd>
+</dl>
+<div class="dynheader">
+Esse é o diagrama das funções que utilizam essa função:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="example_8c_a1449614ce53eb03f6d2dded93cc6d03b_icgraph.svg" width="228" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a name="doc-var-members" id="doc-var-members"></a><h2 id="header-doc-var-members" class="groupheader">Variáveis</h2>
+<a id="a64c2c4190f4937cb5c482b29f95e79c4" name="a64c2c4190f4937cb5c482b29f95e79c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a64c2c4190f4937cb5c482b29f95e79c4">&#9670;&#160;</a></span>bloco_cheio</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t bloco_cheio[8]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Valor inicial:</b><div class="fragment"><div class="line">                    = {</div>
+<div class="line">    0b11111, 0b11111, 0b11111, 0b11111, 0b11111, 0b11111, 0b11111, 0b11111</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p>Bloco sólido preenchido para barras de progresso. </p>
+<dl class="section examples"><dt>Exemplos</dt><dd><a class="el" href="example_8c-example.html#_a2">example.c</a>.</dd>
+</dl>
+
+</div>
+</div>
+<a id="a323f5c8076bcc1d2f1ff2c9c8cf2fb07" name="a323f5c8076bcc1d2f1ff2c9c8cf2fb07"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a323f5c8076bcc1d2f1ff2c9c8cf2fb07">&#9670;&#160;</a></span>display</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structlcd__t.html">lcd_t</a> display</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Instância global do LCD (Objeto de controle). </p>
+<dl class="section examples"><dt>Exemplos</dt><dd><a class="el" href="example_8c-example.html#_a4">example.c</a>.</dd>
+</dl>
+
+</div>
+</div>
+<a id="a06eb0b802bf229b0413c594aa7f61e86" name="a06eb0b802bf229b0413c594aa7f61e86"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a06eb0b802bf229b0413c594aa7f61e86">&#9670;&#160;</a></span>icone_bateria</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t icone_bateria[8]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Valor inicial:</b><div class="fragment"><div class="line">                      = {</div>
+<div class="line">    0b01110, </div>
+<div class="line">    0b11111, </div>
+<div class="line">    0b10001, </div>
+<div class="line">    0b10101, </div>
+<div class="line">    0b10101, </div>
+<div class="line">    0b10001, </div>
+<div class="line">    0b11111, </div>
+<div class="line">    0b11111  </div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p>Ícone de bateria com carga parcial. </p>
+<dl class="section examples"><dt>Exemplos</dt><dd><a class="el" href="example_8c-example.html#_a1">example.c</a>.</dd>
+</dl>
+
+</div>
+</div>
+<a id="a444cb63f21134eeceb68b0aada2cf064" name="a444cb63f21134eeceb68b0aada2cf064"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a444cb63f21134eeceb68b0aada2cf064">&#9670;&#160;</a></span>twi_busy</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile uint8_t twi_busy = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Flag de controle de fluxo para o barramento TWI. </p>
+<dl class="section examples"><dt>Exemplos</dt><dd><a class="el" href="example_8c-example.html#_a0">example.c</a>.</dd>
+</dl>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- HTML footer for doxygen 1.16.1-->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_cfafba98a580ce4b62f8a6fa96d7cbb0.html">example</a></li><li class="navelem"><a href="example_8c.html">example.c</a></li>
+    <li class="footer">Gerado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
+  </ul>
+</div>

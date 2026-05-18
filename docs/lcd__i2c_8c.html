@@ -1,0 +1,633 @@
+<!-- HTML header for doxygen 1.16.1-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-BR">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.16.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta charset="utf-8">
+<title>AVR LCD I2C Library (PCF8574): Referência do Arquivo src/lcd_i2c.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="stylesheet.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+  <table cellspacing="0" cellpadding="0">
+   <tbody>
+   <tr style="height: 56px;">
+    <td id="projectalign" style="padding-left: 0.5em;">
+     <div id="projectname">AVR LCD I2C Library (PCF8574) - YouTube: Ciência Elétrica</div>
+     <div id="projectbrief">Biblioteca para Microcontroladores AVR</div>
+    </td>
+   </tr>
+   </tbody>
+  </table>
+  </div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.16.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Busca',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('lcd__i2c_8c.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Carregando...</div>
+<div class="SRStatus" id="Searching">Procurando...</div>
+<div class="SRStatus" id="NoMatches">Nenhuma entrada encontrado</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Referência do Arquivo lcd_i2c.c</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Implementação da biblioteca para controle de LCD HD44780 via I2C/TWI.  
+<a href="#details">Mais...</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="lcd__i2c_8h_source.html">lcd_i2c.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="lcd__i2c__internal_8h_source.html">lcd_i2c_internal.h</a>&quot;</code><br />
+<code>#include &lt;util/delay.h&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Gráfico de dependência de inclusões para lcd_i2c.c:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="lcd__i2c_8c__incl.svg" width="476" height="262"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Funções</h2></td></tr>
+<tr class="memitem:a385b937dfb762d66be4afab806982ab2" id="r_a385b937dfb762d66be4afab806982ab2"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a385b937dfb762d66be4afab806982ab2">lcd_pcf8574_pulse_enable</a> (<a class="el" href="structlcd__t.html">lcd_t</a> *handle, uint8_t data)</td></tr>
+<tr class="memdesc:a385b937dfb762d66be4afab806982ab2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gera o pulso de "Enable" (transição High -&gt; Low) no pino EN.  <br /></td></tr>
+<tr class="memitem:ab5000e751094fffb82a3214f23854bc8" id="r_ab5000e751094fffb82a3214f23854bc8"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ab5000e751094fffb82a3214f23854bc8">lcd_send_nibble</a> (<a class="el" href="structlcd__t.html">lcd_t</a> *handle, uint8_t nibble, uint8_t mode)</td></tr>
+<tr class="memdesc:ab5000e751094fffb82a3214f23854bc8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Envia 4 bits (nibble) para o LCD através do expansor I2C.  <br /></td></tr>
+<tr class="memitem:aa1979eed4d930f056518b3b08a19a8c9" id="r_aa1979eed4d930f056518b3b08a19a8c9"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#aa1979eed4d930f056518b3b08a19a8c9">lcd_send_8bit</a> (<a class="el" href="structlcd__t.html">lcd_t</a> *handle, uint8_t value, uint8_t mode)</td></tr>
+<tr class="memdesc:aa1979eed4d930f056518b3b08a19a8c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Função utilitária para enviar 8 bits, dividindo-os em dois nibbles.  <br /></td></tr>
+<tr class="memitem:a6f89a9147025038e681d0dc32dd978fc" id="r_a6f89a9147025038e681d0dc32dd978fc"><td class="memItemLeft"><a class="el" href="lcd__i2c__types_8h.html#aea357e33cccf8705623584ab00bd7bac">lcd_status_t</a>&#160;</td><td class="memItemRight"><a class="el" href="#a6f89a9147025038e681d0dc32dd978fc">lcd_init</a> (<a class="el" href="structlcd__t.html">lcd_t</a> *handle)</td></tr>
+<tr class="memdesc:a6f89a9147025038e681d0dc32dd978fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inicializa o display LCD via interface I2C (PCF8574).  <br /></td></tr>
+<tr class="memitem:aa283353273b396f45d55fbec0801bf0d" id="r_aa283353273b396f45d55fbec0801bf0d"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#aa283353273b396f45d55fbec0801bf0d">lcd_send_command</a> (<a class="el" href="structlcd__t.html">lcd_t</a> *handle, uint8_t command)</td></tr>
+<tr class="memdesc:aa283353273b396f45d55fbec0801bf0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Envia um comando de instrução para o controlador do LCD (RS=0).  <br /></td></tr>
+<tr class="memitem:a8cc0e36fe79300b0cd5a712ebe7bc0ff" id="r_a8cc0e36fe79300b0cd5a712ebe7bc0ff"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a8cc0e36fe79300b0cd5a712ebe7bc0ff">lcd_write_char</a> (<a class="el" href="structlcd__t.html">lcd_t</a> *handle, char data)</td></tr>
+<tr class="memdesc:a8cc0e36fe79300b0cd5a712ebe7bc0ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Escreve um único caractere na posição atual do cursor (RS=1).  <br /></td></tr>
+<tr class="memitem:ae48661d1148057da43e0599cb2c4cc1d" id="r_ae48661d1148057da43e0599cb2c4cc1d"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ae48661d1148057da43e0599cb2c4cc1d">lcd_write_string</a> (<a class="el" href="structlcd__t.html">lcd_t</a> *handle, const char *str)</td></tr>
+<tr class="memdesc:ae48661d1148057da43e0599cb2c4cc1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Escreve uma string de caracteres a partir da posição atual do cursor.  <br /></td></tr>
+<tr class="memitem:ac71a7c694ced50dd7be6b6137851a6a2" id="r_ac71a7c694ced50dd7be6b6137851a6a2"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ac71a7c694ced50dd7be6b6137851a6a2">lcd_set_cursor</a> (<a class="el" href="structlcd__t.html">lcd_t</a> *handle, uint8_t col, uint8_t row)</td></tr>
+<tr class="memdesc:ac71a7c694ced50dd7be6b6137851a6a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Posiciona o cursor em uma coordenada específica (coluna, linha).  <br /></td></tr>
+<tr class="memitem:a0c40ab9494b131bcdcbdf5f6e83d9059" id="r_a0c40ab9494b131bcdcbdf5f6e83d9059"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a0c40ab9494b131bcdcbdf5f6e83d9059">lcd_clear_display</a> (<a class="el" href="structlcd__t.html">lcd_t</a> *handle)</td></tr>
+<tr class="memdesc:a0c40ab9494b131bcdcbdf5f6e83d9059"><td class="mdescLeft">&#160;</td><td class="mdescRight">Limpa todo o conteúdo do display e retorna o cursor para a posição (0,0).  <br /></td></tr>
+<tr class="memitem:a600c12ae6114a0fce7f71e35fdb78110" id="r_a600c12ae6114a0fce7f71e35fdb78110"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a600c12ae6114a0fce7f71e35fdb78110">lcd_backlight</a> (<a class="el" href="structlcd__t.html">lcd_t</a> *handle, <a class="el" href="lcd__i2c__types_8h.html#a5aabac5c461d4e5e3a061d712cf46c87">lcd_backlight_t</a> state)</td></tr>
+<tr class="memdesc:a600c12ae6114a0fce7f71e35fdb78110"><td class="mdescLeft">&#160;</td><td class="mdescRight">Liga ou desliga o backlight (luz de fundo) sem alterar o texto atual.  <br /></td></tr>
+<tr class="memitem:aac8e4c279a965b274c929230e4ac7210" id="r_aac8e4c279a965b274c929230e4ac7210"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#aac8e4c279a965b274c929230e4ac7210">lcd_display_control</a> (<a class="el" href="structlcd__t.html">lcd_t</a> *handle, bool cursor_on, bool blink_on)</td></tr>
+<tr class="memdesc:aac8e4c279a965b274c929230e4ac7210"><td class="mdescLeft">&#160;</td><td class="mdescRight">Controla o estado de exibição do cursor e o efeito de piscar (blink).  <br /></td></tr>
+<tr class="memitem:acca2aca79645c0b9e2e5e815d4e6ce5c" id="r_acca2aca79645c0b9e2e5e815d4e6ce5c"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#acca2aca79645c0b9e2e5e815d4e6ce5c">lcd_create_custom_char</a> (<a class="el" href="structlcd__t.html">lcd_t</a> *handle, uint8_t location, uint8_t charmap[])</td></tr>
+<tr class="memdesc:acca2aca79645c0b9e2e5e815d4e6ce5c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cria um caractere personalizado na memória CGRAM do LCD.  <br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Descrição detalhada</h2>
+<div class="textblock"><p>Implementação da biblioteca para controle de LCD HD44780 via I2C/TWI. </p>
+<dl class="section author"><dt>Autor</dt><dd>Tiago Henrique dos Santos/Ciência Elétrica </dd></dl>
+<dl class="section date"><dt>Data</dt><dd>2026</dd></dl>
+<p>Esta biblioteca utiliza o expansor de I/O PCF8574 para interfacear microcontroladores AVR com displays LCD de texto usando apenas 2 pinos (SDA/SCL). </p>
+</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Funções</h2>
+<a id="a600c12ae6114a0fce7f71e35fdb78110" name="a600c12ae6114a0fce7f71e35fdb78110"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a600c12ae6114a0fce7f71e35fdb78110">&#9670;&#160;</a></span>lcd_backlight()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lcd_backlight </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structlcd__t.html">lcd_t</a> *</td>          <td class="paramname"><span class="paramname"><em>handle</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="lcd__i2c__types_8h.html#a5aabac5c461d4e5e3a061d712cf46c87">lcd_backlight_t</a></td>          <td class="paramname"><span class="paramname"><em>state</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Liga ou desliga o backlight (luz de fundo) sem alterar o texto atual. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">handle</td><td>Ponteiro para a estrutura do LCD. </td></tr>
+    <tr><td class="paramname">state</td><td>Estado desejado (LCD_BACKLIGHT_ON ou LCD_BACKLIGHT_OFF). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a0c40ab9494b131bcdcbdf5f6e83d9059" name="a0c40ab9494b131bcdcbdf5f6e83d9059"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c40ab9494b131bcdcbdf5f6e83d9059">&#9670;&#160;</a></span>lcd_clear_display()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lcd_clear_display </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structlcd__t.html">lcd_t</a> *</td>          <td class="paramname"><span class="paramname"><em>handle</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Limpa todo o conteúdo do display e retorna o cursor para a posição (0,0). </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">handle</td><td>Ponteiro para a estrutura do LCD. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Observação</dt><dd>Este comando necessita de um tempo de processamento maior (mínimo de 2ms). </dd></dl>
+<div class="dynheader">
+Este é o diagrama das funções utilizadas por essa função:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="lcd__i2c_8c_a0c40ab9494b131bcdcbdf5f6e83d9059_cgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div class="dynheader">
+Esse é o diagrama das funções que utilizam essa função:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="lcd__i2c_8c_a0c40ab9494b131bcdcbdf5f6e83d9059_icgraph.svg" width="340" height="63"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="acca2aca79645c0b9e2e5e815d4e6ce5c" name="acca2aca79645c0b9e2e5e815d4e6ce5c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acca2aca79645c0b9e2e5e815d4e6ce5c">&#9670;&#160;</a></span>lcd_create_custom_char()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lcd_create_custom_char </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structlcd__t.html">lcd_t</a> *</td>          <td class="paramname"><span class="paramname"><em>handle</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>location</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>charmap</em></span>[]&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Cria um caractere personalizado na memória CGRAM do LCD. </p>
+<p>Permite criar e armazenar até 8 ícones customizados mapeados nos índices de memória de 0 a 7.</p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">handle</td><td>Ponteiro para a estrutura do LCD. </td></tr>
+    <tr><td class="paramname">location</td><td>Índice da memória onde o caractere será salvo (valores válidos: 0 a 7). </td></tr>
+    <tr><td class="paramname">charmap</td><td>Array de 8 bytes representando a matriz de pixels 5x8 do caractere. </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+Este é o diagrama das funções utilizadas por essa função:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="lcd__i2c_8c_acca2aca79645c0b9e2e5e815d4e6ce5c_cgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div class="dynheader">
+Esse é o diagrama das funções que utilizam essa função:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="lcd__i2c_8c_acca2aca79645c0b9e2e5e815d4e6ce5c_icgraph.svg" width="272" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="aac8e4c279a965b274c929230e4ac7210" name="aac8e4c279a965b274c929230e4ac7210"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aac8e4c279a965b274c929230e4ac7210">&#9670;&#160;</a></span>lcd_display_control()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lcd_display_control </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structlcd__t.html">lcd_t</a> *</td>          <td class="paramname"><span class="paramname"><em>handle</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>cursor_on</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>blink_on</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Controla o estado de exibição do cursor e o efeito de piscar (blink). </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">handle</td><td>Ponteiro para a estrutura do LCD. </td></tr>
+    <tr><td class="paramname">cursor_on</td><td>Define se a linha inferior (sublinhado) do cursor aparece. </td></tr>
+    <tr><td class="paramname">blink_on</td><td>Define se o bloco inteiro do cursor fica piscando. </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+Este é o diagrama das funções utilizadas por essa função:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="lcd__i2c_8c_aac8e4c279a965b274c929230e4ac7210_cgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a id="a6f89a9147025038e681d0dc32dd978fc" name="a6f89a9147025038e681d0dc32dd978fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f89a9147025038e681d0dc32dd978fc">&#9670;&#160;</a></span>lcd_init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="lcd__i2c__types_8h.html#aea357e33cccf8705623584ab00bd7bac">lcd_status_t</a> lcd_init </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structlcd__t.html">lcd_t</a> *</td>          <td class="paramname"><span class="paramname"><em>handle</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Inicializa o display LCD via interface I2C (PCF8574). </p>
+<dl class="section return"><dt>Retorna</dt><dd><a class="el" href="lcd__i2c__types_8h.html#aea357e33cccf8705623584ab00bd7bac" title="Status de retorno das funções da biblioteca.">lcd_status_t</a> Status da operação (LCD_OK em caso de sucesso). </dd></dl>
+<div class="dynheader">
+Este é o diagrama das funções utilizadas por essa função:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="lcd__i2c_8c_a6f89a9147025038e681d0dc32dd978fc_cgraph.svg" width="100%" height="385"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div class="dynheader">
+Esse é o diagrama das funções que utilizam essa função:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="lcd__i2c_8c_a6f89a9147025038e681d0dc32dd978fc_icgraph.svg" width="171" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="a385b937dfb762d66be4afab806982ab2" name="a385b937dfb762d66be4afab806982ab2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a385b937dfb762d66be4afab806982ab2">&#9670;&#160;</a></span>lcd_pcf8574_pulse_enable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lcd_pcf8574_pulse_enable </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structlcd__t.html">lcd_t</a> *</td>          <td class="paramname"><span class="paramname"><em>handle</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>data</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gera o pulso de "Enable" (transição High -&gt; Low) no pino EN. </p>
+<dl class="section note"><dt>Observação</dt><dd>Utiliza tempos de subida (2us) e descida (40us) para garantir a estabilidade. </dd></dl>
+<div class="dynheader">
+Esse é o diagrama das funções que utilizam essa função:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="lcd__i2c_8c_a385b937dfb762d66be4afab806982ab2_icgraph.svg" width="100%" height="575"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a id="aa1979eed4d930f056518b3b08a19a8c9" name="aa1979eed4d930f056518b3b08a19a8c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1979eed4d930f056518b3b08a19a8c9">&#9670;&#160;</a></span>lcd_send_8bit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lcd_send_8bit </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structlcd__t.html">lcd_t</a> *</td>          <td class="paramname"><span class="paramname"><em>handle</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>value</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>mode</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Função utilitária para enviar 8 bits, dividindo-os em dois nibbles. </p>
+<p>Realiza o fracionamento do byte em parte alta (Most Significant Nibble) e parte baixa (Least Significant Nibble) para transmissão sequencial.</p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">handle</td><td>Ponteiro para a estrutura de configuração do LCD. </td></tr>
+    <tr><td class="paramname">value</td><td>O byte completo de 8 bits a ser transmitido. </td></tr>
+    <tr><td class="paramname">mode</td><td>Define o estado do pino Register Select (RS). </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+Este é o diagrama das funções utilizadas por essa função:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="lcd__i2c_8c_aa1979eed4d930f056518b3b08a19a8c9_cgraph.svg" width="498" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div class="dynheader">
+Esse é o diagrama das funções que utilizam essa função:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="lcd__i2c_8c_aa1979eed4d930f056518b3b08a19a8c9_icgraph.svg" width="100%" height="518"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a id="aa283353273b396f45d55fbec0801bf0d" name="aa283353273b396f45d55fbec0801bf0d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa283353273b396f45d55fbec0801bf0d">&#9670;&#160;</a></span>lcd_send_command()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lcd_send_command </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structlcd__t.html">lcd_t</a> *</td>          <td class="paramname"><span class="paramname"><em>handle</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>command</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Envia um comando de instrução para o controlador do LCD (RS=0). </p>
+<p>Utilizado para configurações de baixo nível no controlador HD44780.</p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">handle</td><td>Ponteiro para a estrutura do LCD. </td></tr>
+    <tr><td class="paramname">command</td><td>Byte de comando (ex: LCD_CMD_CLEAR_DISPLAY). </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+Este é o diagrama das funções utilizadas por essa função:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="lcd__i2c_8c_aa283353273b396f45d55fbec0801bf0d_cgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div class="dynheader">
+Esse é o diagrama das funções que utilizam essa função:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="lcd__i2c_8c_aa283353273b396f45d55fbec0801bf0d_icgraph.svg" width="638" height="216"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="ab5000e751094fffb82a3214f23854bc8" name="ab5000e751094fffb82a3214f23854bc8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab5000e751094fffb82a3214f23854bc8">&#9670;&#160;</a></span>lcd_send_nibble()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lcd_send_nibble </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structlcd__t.html">lcd_t</a> *</td>          <td class="paramname"><span class="paramname"><em>handle</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>nibble</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>mode</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Envia 4 bits (nibble) para o LCD através do expansor I2C. </p>
+<p>Como a interface com o LCD é de 4 bits, esta função prepara o byte combinando os dados, o estado do pino RS e o estado do Backlight.</p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">handle</td><td>Ponteiro para a estrutura de configuração do LCD. </td></tr>
+    <tr><td class="paramname">nibble</td><td>Os 4 bits de dados (devem estar alinhados nos bits superiores D4-D7). </td></tr>
+    <tr><td class="paramname">mode</td><td>Define o propósito do envio: 0 para Comando (RS=0) ou 1 para Dado (RS=1). </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+Este é o diagrama das funções utilizadas por essa função:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="lcd__i2c_8c_ab5000e751094fffb82a3214f23854bc8_cgraph.svg" width="348" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div class="dynheader">
+Esse é o diagrama das funções que utilizam essa função:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="lcd__i2c_8c_ab5000e751094fffb82a3214f23854bc8_icgraph.svg" width="100%" height="575"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a id="ac71a7c694ced50dd7be6b6137851a6a2" name="ac71a7c694ced50dd7be6b6137851a6a2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac71a7c694ced50dd7be6b6137851a6a2">&#9670;&#160;</a></span>lcd_set_cursor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lcd_set_cursor </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structlcd__t.html">lcd_t</a> *</td>          <td class="paramname"><span class="paramname"><em>handle</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>col</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>row</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Posiciona o cursor em uma coordenada específica (coluna, linha). </p>
+<p>Altera o endereço de memória DDRAM para reposicionar a próxima escrita.</p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">handle</td><td>Ponteiro para a estrutura do LCD. </td></tr>
+    <tr><td class="paramname">col</td><td>Coluna destino (0 a N-1). </td></tr>
+    <tr><td class="paramname">row</td><td>Linha destino (0 a N-1). </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+Este é o diagrama das funções utilizadas por essa função:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="lcd__i2c_8c_ac71a7c694ced50dd7be6b6137851a6a2_cgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div class="dynheader">
+Esse é o diagrama das funções que utilizam essa função:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="lcd__i2c_8c_ac71a7c694ced50dd7be6b6137851a6a2_icgraph.svg" width="215" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="a8cc0e36fe79300b0cd5a712ebe7bc0ff" name="a8cc0e36fe79300b0cd5a712ebe7bc0ff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8cc0e36fe79300b0cd5a712ebe7bc0ff">&#9670;&#160;</a></span>lcd_write_char()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lcd_write_char </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structlcd__t.html">lcd_t</a> *</td>          <td class="paramname"><span class="paramname"><em>handle</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char</td>          <td class="paramname"><span class="paramname"><em>data</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Escreve um único caractere na posição atual do cursor (RS=1). </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">handle</td><td>Ponteiro para a estrutura do LCD. </td></tr>
+    <tr><td class="paramname">data</td><td>Caractere ASCII a ser exibido. </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+Este é o diagrama das funções utilizadas por essa função:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="lcd__i2c_8c_a8cc0e36fe79300b0cd5a712ebe7bc0ff_cgraph.svg" width="651" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div class="dynheader">
+Esse é o diagrama das funções que utilizam essa função:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="lcd__i2c_8c_a8cc0e36fe79300b0cd5a712ebe7bc0ff_icgraph.svg" width="374" height="63"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="ae48661d1148057da43e0599cb2c4cc1d" name="ae48661d1148057da43e0599cb2c4cc1d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae48661d1148057da43e0599cb2c4cc1d">&#9670;&#160;</a></span>lcd_write_string()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lcd_write_string </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structlcd__t.html">lcd_t</a> *</td>          <td class="paramname"><span class="paramname"><em>handle</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>str</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Escreve uma string de caracteres a partir da posição atual do cursor. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">handle</td><td>Ponteiro para a estrutura do LCD. </td></tr>
+    <tr><td class="paramname">str</td><td>Ponteiro para a string (terminada em caractere nulo - '\0'). </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+Este é o diagrama das funções utilizadas por essa função:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="lcd__i2c_8c_ae48661d1148057da43e0599cb2c4cc1d_cgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div class="dynheader">
+Esse é o diagrama das funções que utilizam essa função:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="lcd__i2c_8c_ae48661d1148057da43e0599cb2c4cc1d_icgraph.svg" width="220" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- HTML footer for doxygen 1.16.1-->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a href="lcd__i2c_8c.html">lcd_i2c.c</a></li>
+    <li class="footer">Gerado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
+  </ul>
+</div>

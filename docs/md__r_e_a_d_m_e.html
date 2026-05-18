@@ -1,0 +1,185 @@
+<!-- HTML header for doxygen 1.16.1-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-BR">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.16.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta charset="utf-8">
+<title>AVR LCD I2C Library (PCF8574): AVR LCD I2C Library (PCF8574)</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="stylesheet.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+  <table cellspacing="0" cellpadding="0">
+   <tbody>
+   <tr style="height: 56px;">
+    <td id="projectalign" style="padding-left: 0.5em;">
+     <div id="projectname">AVR LCD I2C Library (PCF8574) - YouTube: Ciência Elétrica</div>
+     <div id="projectbrief">Biblioteca para Microcontroladores AVR</div>
+    </td>
+   </tr>
+   </tbody>
+  </table>
+  </div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.16.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Busca',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('md__r_e_a_d_m_e.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Carregando...</div>
+<div class="SRStatus" id="Searching">Procurando...</div>
+<div class="SRStatus" id="NoMatches">Nenhuma entrada encontrado</div>
+</div>
+</div>
+</div>
+</div>
+
+<div><div class="header">
+  <div class="headertitle"><div class="title">AVR LCD I2C Library (PCF8574) </div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><p><a class="anchor" id="autotoc_md0"></a></p>
+<p><img src="https://img.shields.io/badge/license-MIT-green" alt="License" class="inline"/> <img src="https://img.shields.io/badge/MCU-AVR-blue" alt="AVR" class="inline"/> <img src="https://img.shields.io/badge/language-C-darkblue" alt="Language" class="inline"/> <img src="https://img.shields.io/badge/compiler-XC8-orange" alt="Compiler" class="inline"/></p>
+<p>Uma biblioteca C leve, robusta e extensível para controlar displays LCD (HD44780) via expansor de I/O I2C PCF8574 em microcontroladores AVR (ATmega328P, ATmega2560, etc.).</p>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md1"></a>
+✨ Características</h1>
+<ul>
+<li><b>Abstração de Hardware (HAL):</b> Injeção de dependência para drivers I2C e funções de Delay.</li>
+<li><b>Modo 4-bits:</b> Comunicação otimizada via PCF8574.</li>
+<li><b>Custom Chars:</b> Suporte para criação de até 8 caracteres personalizados na CGRAM.</li>
+<li><b>Documentação Completa:</b> Compatível com Doxygen.</li>
+<li><b>Baixo Consumo:</b> Gerenciamento eficiente de Backlight.</li>
+</ul>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md2"></a>
+🛠️ Requisitos</h1>
+<ul>
+<li><b>Compilador:</b> avr-gcc</li>
+<li><b>Ferramentas:</b> avr-libc, Make ou CMake</li>
+<li><b>Hardware:</b> Microcontrolador AVR e Adaptador LCD I2C (PCF8574)</li>
+</ul>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md3"></a>
+🚀 Como Usar</h1>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md4"></a>
+1. Configuração do Objeto</h2>
+<p>Defina uma instância da estrutura <span class="tt"><a class="el" href="structlcd__t.html" title="Estrutura de controle (Handle) do objeto LCD.">lcd_t</a></span> e forneça as funções de ponte para I2C e tempo:</p>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="lcd__i2c_8h.html">lcd_i2c.h</a>&quot;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Exemplo de função de escrita I2C</span></div>
+<div class="line">int8_t i2c_wrapper(uint8_t addr, uint8_t data) {</div>
+<div class="line">    <span class="keywordflow">return</span> (twi_master_write(addr, &amp;data, 1) == TWI_OK) ? 0 : -1;</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Exemplo de função de delay</span></div>
+<div class="line"><span class="keywordtype">void</span> delay_wrapper(uint16_t ms) {</div>
+<div class="line">    <span class="keywordflow">while</span>(ms--) _delay_ms(1);</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">int</span> <a class="code hl_function" href="example_8c.html#a840291bc02cba5474a4cb46a9b9566fe">main</a>() {</div>
+<div class="line">    <a class="code hl_struct" href="structlcd__t.html">lcd_t</a> lcd = {</div>
+<div class="line">        .address = 0x27,</div>
+<div class="line">        .columns = 16,</div>
+<div class="line">        .rows = 2,</div>
+<div class="line">        .backlight = <a class="code hl_enumvalue" href="lcd__i2c__types_8h.html#a5aabac5c461d4e5e3a061d712cf46c87a2e325be9b04f7628f3d194d1c005fd7b">LCD_BACKLIGHT_ON</a>,</div>
+<div class="line">        .i2c_write = i2c_wrapper,</div>
+<div class="line">        .delay_ms = delay_wrapper</div>
+<div class="line">    };</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code hl_function" href="lcd__i2c_8h.html#a6f89a9147025038e681d0dc32dd978fc">lcd_init</a>(&amp;lcd) == <a class="code hl_enumvalue" href="lcd__i2c__types_8h.html#aea357e33cccf8705623584ab00bd7bacab4ae24c39f9cff11aff86d245c3e28ce">LCD_OK</a>) {</div>
+<div class="line">        <a class="code hl_function" href="lcd__i2c_8h.html#ae48661d1148057da43e0599cb2c4cc1d">lcd_write_string</a>(&amp;lcd, <span class="stringliteral">&quot;Ola, AVR!&quot;</span>);</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+<div class="ttc" id="aexample_8c_html_a840291bc02cba5474a4cb46a9b9566fe"><div class="ttname"><a href="example_8c.html#a840291bc02cba5474a4cb46a9b9566fe">main</a></div><div class="ttdeci">int main(void)</div><div class="ttdoc">Ponto de entrada principal da aplicação.</div><div class="ttdef"><b>Definição</b> example.c:60</div></div>
+<div class="ttc" id="alcd__i2c_8h_html"><div class="ttname"><a href="lcd__i2c_8h.html">lcd_i2c.h</a></div><div class="ttdoc">API pública para controle de displays LCD via interface I2C (PCF8574).</div></div>
+<div class="ttc" id="alcd__i2c_8h_html_a6f89a9147025038e681d0dc32dd978fc"><div class="ttname"><a href="lcd__i2c_8h.html#a6f89a9147025038e681d0dc32dd978fc">lcd_init</a></div><div class="ttdeci">lcd_status_t lcd_init(lcd_t *handle)</div><div class="ttdoc">Inicializa o display LCD via interface I2C (PCF8574).</div><div class="ttdef"><b>Definição</b> lcd_i2c.c:72</div></div>
+<div class="ttc" id="alcd__i2c_8h_html_ae48661d1148057da43e0599cb2c4cc1d"><div class="ttname"><a href="lcd__i2c_8h.html#ae48661d1148057da43e0599cb2c4cc1d">lcd_write_string</a></div><div class="ttdeci">void lcd_write_string(lcd_t *handle, const char *str)</div><div class="ttdoc">Escreve uma string de caracteres a partir da posição atual do cursor.</div><div class="ttdef"><b>Definição</b> lcd_i2c.c:121</div></div>
+<div class="ttc" id="alcd__i2c__types_8h_html_a5aabac5c461d4e5e3a061d712cf46c87a2e325be9b04f7628f3d194d1c005fd7b"><div class="ttname"><a href="lcd__i2c__types_8h.html#a5aabac5c461d4e5e3a061d712cf46c87a2e325be9b04f7628f3d194d1c005fd7b">LCD_BACKLIGHT_ON</a></div><div class="ttdeci">@ LCD_BACKLIGHT_ON</div><div class="ttdef"><b>Definição</b> lcd_i2c_types.h:37</div></div>
+<div class="ttc" id="alcd__i2c__types_8h_html_aea357e33cccf8705623584ab00bd7bacab4ae24c39f9cff11aff86d245c3e28ce"><div class="ttname"><a href="lcd__i2c__types_8h.html#aea357e33cccf8705623584ab00bd7bacab4ae24c39f9cff11aff86d245c3e28ce">LCD_OK</a></div><div class="ttdeci">@ LCD_OK</div><div class="ttdef"><b>Definição</b> lcd_i2c_types.h:24</div></div>
+<div class="ttc" id="astructlcd__t_html"><div class="ttname"><a href="structlcd__t.html">lcd_t</a></div><div class="ttdoc">Estrutura de controle (Handle) do objeto LCD.</div><div class="ttdef"><b>Definição</b> lcd_i2c_types.h:58</div></div>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md5"></a>
+2. Gerar Documentação</h2>
+<p>Se você tiver o Doxygen instalado, execute: </p><div class="fragment"><div class="line">doxygen Doxyfile</div>
+</div><!-- fragment --><p> Isso gerará a documentação completa em HTML na pasta <span class="tt">doc/</span>.</p>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md6"></a>
+📁 Estrutura do Projeto</h1>
+<ul>
+<li><span class="tt"><a class="el" href="lcd__i2c_8h.html" title="API pública para controle de displays LCD via interface I2C (PCF8574).">lcd_i2c.h</a>/c</span>: API principal.</li>
+<li><span class="tt"><a class="el" href="lcd__i2c__types_8h.html" title="Definições de tipos, estruturas e enumerações da biblioteca LCD.">lcd_i2c_types.h</a></span>: Definições de estruturas e enums.</li>
+<li><span class="tt"><a class="el" href="lcd__i2c__config_8h.html" title="Definições de hardware, mapeamento de pinos e comandos do LCD.">lcd_i2c_config.h</a></span>: Configurações de hardware e timings.</li>
+<li><span class="tt"><a class="el" href="lcd__i2c__internal_8h.html" title="Funções internas e de baixo nível para comunicação com o PCF8574.">lcd_i2c_internal.h</a></span>: Funções de baixo nível.</li>
+</ul>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md7"></a>
+⚖️ Licença</h1>
+<p>Distribuído sob a licença MIT. Veja <span class="tt">LICENSE</span> para mais informações. </p>
+</div></div><!-- contents -->
+</div><!-- PageDoc -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- HTML footer for doxygen 1.16.1-->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Gerado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
+  </ul>
+</div>

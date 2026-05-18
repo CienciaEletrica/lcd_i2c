@@ -1,0 +1,232 @@
+<!-- HTML header for doxygen 1.16.1-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-BR">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.16.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta charset="utf-8">
+<title>AVR LCD I2C Library (PCF8574): example.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="stylesheet.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+  <table cellspacing="0" cellpadding="0">
+   <tbody>
+   <tr style="height: 56px;">
+    <td id="projectalign" style="padding-left: 0.5em;">
+     <div id="projectname">AVR LCD I2C Library (PCF8574) - YouTube: Ciência Elétrica</div>
+     <div id="projectbrief">Biblioteca para Microcontroladores AVR</div>
+    </td>
+   </tr>
+   </tbody>
+  </table>
+  </div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.16.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Busca',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('example_8c-example.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Carregando...</div>
+<div class="SRStatus" id="Searching">Procurando...</div>
+<div class="SRStatus" id="NoMatches">Nenhuma entrada encontrado</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">example.c</div></div>
+</div><!--header-->
+<div class="contents">
+<p>Exemplo prático de aplicação da biblioteca lcd_i2c em AVR. </p><dl class="section author"><dt>Autor</dt><dd>Tiago Henrique dos Santos/Ciência Elétrica </dd></dl>
+<dl class="section date"><dt>Data</dt><dd>2026</dd></dl>
+<p>Este exemplo demonstra o fluxo completo de uso da biblioteca:</p><ol type="1">
+<li>Configuração do hardware TWI (I2C) nativo do AVR.</li>
+<li>Injeção de dependência (ponteiros de função para I2C e Delay).</li>
+<li>Criação de glifos customizados na CGRAM do LCD.</li>
+<li>Implementação de uma barra de progresso animada.</li>
+</ol>
+<div class="fragment"><div class="line"></div>
+<div class="line"><span class="preprocessor">#define F_CPU 16000000UL</span></div>
+<div class="line"><span class="preprocessor">#include &lt;avr/io.h&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;avr/interrupt.h&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;util/delay.h&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;stdint.h&gt;</span> </div>
+<div class="line"> </div>
+<div class="line"><span class="preprocessor">#include &quot;twi.h&quot;</span> <span class="comment">// Driver de hardware I2C</span></div>
+<div class="line"><span class="preprocessor">#include &quot;<a class="code" href="lcd__i2c_8h.html">lcd_i2c.h</a>&quot;</span> <span class="comment">// Driver de alto nível do LCD</span></div>
+<div class="line"></div>
+<div class="line"><span class="keyword">volatile</span> uint8_t <a id="_a0" name="_a0"></a><a class="code hl_variable" href="example_8c.html#a444cb63f21134eeceb68b0aada2cf064">twi_busy</a> = 0;</div>
+<div class="line"></div>
+<div class="line"></div>
+<div class="line">uint8_t <a id="_a1" name="_a1"></a><a class="code hl_variable" href="example_8c.html#a06eb0b802bf229b0413c594aa7f61e86">icone_bateria</a>[8] = {</div>
+<div class="line">    0b01110, <span class="comment">// [ Linha 0 ] - Topo (conector)</span></div>
+<div class="line">    0b11111, <span class="comment">// [ Linha 1 ] - Ombro da bateria</span></div>
+<div class="line">    0b10001, <span class="comment">// [ Linha 2 ] - Lateral vazia</span></div>
+<div class="line">    0b10101, <span class="comment">// [ Linha 3 ] - Lateral com carga central</span></div>
+<div class="line">    0b10101, <span class="comment">// [ Linha 4 ] - Lateral com carga central</span></div>
+<div class="line">    0b10001, <span class="comment">// [ Linha 5 ] - Lateral vazia</span></div>
+<div class="line">    0b11111, <span class="comment">// [ Linha 6 ] - Base</span></div>
+<div class="line">    0b11111  <span class="comment">// [ Linha 7 ] - Base (contorno inferior)</span></div>
+<div class="line">};</div>
+<div class="line"></div>
+<div class="line">uint8_t <a id="_a2" name="_a2"></a><a class="code hl_variable" href="example_8c.html#a64c2c4190f4937cb5c482b29f95e79c4">bloco_cheio</a>[8] = {</div>
+<div class="line">    0b11111, 0b11111, 0b11111, 0b11111, 0b11111, 0b11111, 0b11111, 0b11111</div>
+<div class="line">};</div>
+<div class="line"></div>
+<div class="line"><a id="_a3" name="_a3"></a><a class="code hl_struct" href="structlcd__t.html">lcd_t</a> <a id="_a4" name="_a4"></a><a class="code hl_variable" href="example_8c.html#a323f5c8076bcc1d2f1ff2c9c8cf2fb07">display</a>; </div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Protótipos das funções de suporte (Callbacks e Bridges)</span></div>
+<div class="line"><span class="keywordtype">void</span> <a id="a5" name="a5"></a><a class="code hl_function" href="example_8c.html#a1449614ce53eb03f6d2dded93cc6d03b">on_twi_complete</a>(TWI_Status_t status, <span class="keyword">const</span> uint8_t* data, <span class="keywordtype">size_t</span> length);</div>
+<div class="line">int8_t <a id="a6" name="a6"></a><a class="code hl_function" href="example_8c.html#a3ad8fe5813ce14841ad693dc09f3da6f">my_i2c_write</a>(uint8_t addr, uint8_t data);</div>
+<div class="line"><span class="keywordtype">void</span> <a id="a7" name="a7"></a><a class="code hl_function" href="example_8c.html#a2cb7775f336a7cd8c195258bdcddd5ad">my_delay_ms</a>(uint16_t ms);</div>
+<div class="line"></div>
+<div class="line"><span class="keywordtype">int</span> <a id="a8" name="a8"></a><a class="code hl_function" href="example_8c.html#a840291bc02cba5474a4cb46a9b9566fe">main</a>(<span class="keywordtype">void</span>) {</div>
+<div class="line">    <span class="comment">// 1. Configurações Iniciais de Hardware</span></div>
+<div class="line">    sei(); <span class="comment">// Habilita interrupções globais (necessário para o TWI)</span></div>
+<div class="line">    twi_init(TWI_MODE_MASTER, 0, TWI_CLOCK_100KHZ);</div>
+<div class="line">    twi_master_register_callbacks(<a class="code hl_function" href="example_8c.html#a1449614ce53eb03f6d2dded93cc6d03b">on_twi_complete</a>, NULL);</div>
+<div class="line">    _delay_ms(200); <span class="comment">// Aguarda a estabilização elétrica do LCD</span></div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// 2. Configuração do Objeto LCD (Injeção de Dependência)</span></div>
+<div class="line">    <a class="code hl_variable" href="example_8c.html#a323f5c8076bcc1d2f1ff2c9c8cf2fb07">display</a>.address   = 0x27;           <span class="comment">// Endereço I2C do PCF8574</span></div>
+<div class="line">    <a class="code hl_variable" href="example_8c.html#a323f5c8076bcc1d2f1ff2c9c8cf2fb07">display</a>.columns   = 16;             <span class="comment">// LCD 16x2</span></div>
+<div class="line">    <a class="code hl_variable" href="example_8c.html#a323f5c8076bcc1d2f1ff2c9c8cf2fb07">display</a>.rows      = 2;</div>
+<div class="line">    <a class="code hl_variable" href="example_8c.html#a323f5c8076bcc1d2f1ff2c9c8cf2fb07">display</a>.backlight = <a id="_a9" name="_a9"></a><a class="code hl_enumvalue" href="lcd__i2c__types_8h.html#a5aabac5c461d4e5e3a061d712cf46c87a2e325be9b04f7628f3d194d1c005fd7b">LCD_BACKLIGHT_ON</a>; </div>
+<div class="line">    <a class="code hl_variable" href="example_8c.html#a323f5c8076bcc1d2f1ff2c9c8cf2fb07">display</a>.i2c_write = <a class="code hl_function" href="example_8c.html#a3ad8fe5813ce14841ad693dc09f3da6f">my_i2c_write</a>;   <span class="comment">// Vincula função de escrita I2C</span></div>
+<div class="line">    <a class="code hl_variable" href="example_8c.html#a323f5c8076bcc1d2f1ff2c9c8cf2fb07">display</a>.delay_ms  = <a class="code hl_function" href="example_8c.html#a2cb7775f336a7cd8c195258bdcddd5ad">my_delay_ms</a>;    <span class="comment">// Vincula função de atraso (ms)</span></div>
+<div class="line">    </div>
+<div class="line">    <span class="comment">// 3. Inicialização e Lógica de Exibição</span></div>
+<div class="line">    <span class="keywordflow">if</span> (<a id="a10" name="a10"></a><a class="code hl_function" href="lcd__i2c_8h.html#a6f89a9147025038e681d0dc32dd978fc">lcd_init</a>(&amp;<a class="code hl_variable" href="example_8c.html#a323f5c8076bcc1d2f1ff2c9c8cf2fb07">display</a>) == <a id="_a11" name="_a11"></a><a class="code hl_enumvalue" href="lcd__i2c__types_8h.html#aea357e33cccf8705623584ab00bd7bacab4ae24c39f9cff11aff86d245c3e28ce">LCD_OK</a>) {</div>
+<div class="line">        <span class="comment">// Grava os desenhos customizados nos índices 0 e 1 da CGRAM</span></div>
+<div class="line">        <a id="a12" name="a12"></a><a class="code hl_function" href="lcd__i2c_8h.html#acca2aca79645c0b9e2e5e815d4e6ce5c">lcd_create_custom_char</a>(&amp;<a class="code hl_variable" href="example_8c.html#a323f5c8076bcc1d2f1ff2c9c8cf2fb07">display</a>, 0, <a class="code hl_variable" href="example_8c.html#a06eb0b802bf229b0413c594aa7f61e86">icone_bateria</a>); <span class="comment">// Posição 0</span></div>
+<div class="line">        <a class="code hl_function" href="lcd__i2c_8h.html#acca2aca79645c0b9e2e5e815d4e6ce5c">lcd_create_custom_char</a>(&amp;<a class="code hl_variable" href="example_8c.html#a323f5c8076bcc1d2f1ff2c9c8cf2fb07">display</a>, 1, <a class="code hl_variable" href="example_8c.html#a64c2c4190f4937cb5c482b29f95e79c4">bloco_cheio</a>);   <span class="comment">// Posição 1</span></div>
+<div class="line"> </div>
+<div class="line">        <span class="keywordflow">while</span> (1) {</div>
+<div class="line">            <a id="a13" name="a13"></a><a class="code hl_function" href="lcd__i2c_8h.html#a0c40ab9494b131bcdcbdf5f6e83d9059">lcd_clear_display</a>(&amp;<a class="code hl_variable" href="example_8c.html#a323f5c8076bcc1d2f1ff2c9c8cf2fb07">display</a>); <span class="comment">// Limpa resquícios da volta anterior</span></div>
+<div class="line">            </div>
+<div class="line">            <a id="a14" name="a14"></a><a class="code hl_function" href="lcd__i2c_8h.html#ac71a7c694ced50dd7be6b6137851a6a2">lcd_set_cursor</a>(&amp;<a class="code hl_variable" href="example_8c.html#a323f5c8076bcc1d2f1ff2c9c8cf2fb07">display</a>, 0, 0);</div>
+<div class="line">            <a id="a15" name="a15"></a><a class="code hl_function" href="lcd__i2c_8h.html#a8cc0e36fe79300b0cd5a712ebe7bc0ff">lcd_write_char</a>(&amp;<a class="code hl_variable" href="example_8c.html#a323f5c8076bcc1d2f1ff2c9c8cf2fb07">display</a>, 0); <span class="comment">//Exibe o desenho da bateria (índice 0)</span></div>
+<div class="line">            <a id="a16" name="a16"></a><a class="code hl_function" href="lcd__i2c_8h.html#ae48661d1148057da43e0599cb2c4cc1d">lcd_write_string</a>(&amp;<a class="code hl_variable" href="example_8c.html#a323f5c8076bcc1d2f1ff2c9c8cf2fb07">display</a>, <span class="stringliteral">&quot; CARREGANDO...&quot;</span>);</div>
+<div class="line"> </div>
+<div class="line">            <span class="comment">// --- Linha 2: Animação de Barra de Progresso ---</span></div>
+<div class="line">            <span class="keywordflow">for</span> (uint8_t i = 0; i &lt; 16; i++) {</div>
+<div class="line">                <a class="code hl_function" href="lcd__i2c_8h.html#ac71a7c694ced50dd7be6b6137851a6a2">lcd_set_cursor</a>(&amp;<a class="code hl_variable" href="example_8c.html#a323f5c8076bcc1d2f1ff2c9c8cf2fb07">display</a>, i, 1); <span class="comment">// Move para cada coluna da linha 2</span></div>
+<div class="line">                <a class="code hl_function" href="lcd__i2c_8h.html#a8cc0e36fe79300b0cd5a712ebe7bc0ff">lcd_write_char</a>(&amp;<a class="code hl_variable" href="example_8c.html#a323f5c8076bcc1d2f1ff2c9c8cf2fb07">display</a>, 1); <span class="comment">// Desenha o bloco (índice 1)</span></div>
+<div class="line">                _delay_ms(150); <span class="comment">// Controla a cadência da animação</span></div>
+<div class="line">            }</div>
+<div class="line"> </div>
+<div class="line">            _delay_ms(1000); <span class="comment">// Pausa final antes de reiniciar o loop</span></div>
+<div class="line">        }</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordflow">return</span> 0;</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">/* --------------------------------------------------------------------------</span></div>
+<div class="line"><span class="comment"> * FUNÇÕES DE PONTE (BRIDGE/WRAPPER)</span></div>
+<div class="line"><span class="comment"> * Conectam a lógica agnóstica da biblioteca ao hardware específico do AVR.</span></div>
+<div class="line"><span class="comment"> * -------------------------------------------------------------------------- */</span></div>
+<div class="line"></div>
+<div class="line"><span class="keywordtype">void</span> <a class="code hl_function" href="example_8c.html#a1449614ce53eb03f6d2dded93cc6d03b">on_twi_complete</a>(TWI_Status_t status, <span class="keyword">const</span> uint8_t* data, <span class="keywordtype">size_t</span> length) {</div>
+<div class="line">    <a class="code hl_variable" href="example_8c.html#a444cb63f21134eeceb68b0aada2cf064">twi_busy</a> = 0;</div>
+<div class="line">}</div>
+<div class="line"></div>
+<div class="line">int8_t <a class="code hl_function" href="example_8c.html#a3ad8fe5813ce14841ad693dc09f3da6f">my_i2c_write</a>(uint8_t addr, uint8_t data) {</div>
+<div class="line">    <a class="code hl_variable" href="example_8c.html#a444cb63f21134eeceb68b0aada2cf064">twi_busy</a> = 1;</div>
+<div class="line">    <span class="keywordflow">if</span> (twi_master_start_write(addr, &amp;data, 1) == TWI_OK) {</div>
+<div class="line">    <span class="comment">// Espera ocupada até que o driver TWI libere o barramento</span></div>
+<div class="line">        uint16_t timeout = 50000;</div>
+<div class="line">        <span class="keywordflow">while</span>(<a class="code hl_variable" href="example_8c.html#a444cb63f21134eeceb68b0aada2cf064">twi_busy</a> &amp;&amp; timeout--);</div>
+<div class="line">        <span class="keywordflow">return</span> 0; <span class="comment">// Sucesso para a biblioteca</span></div>
+<div class="line">    }</div>
+<div class="line">    <a class="code hl_variable" href="example_8c.html#a444cb63f21134eeceb68b0aada2cf064">twi_busy</a> = 0;</div>
+<div class="line">    <span class="keywordflow">return</span> -1; <span class="comment">// Erro para a biblioteca</span></div>
+<div class="line">}</div>
+<div class="line"></div>
+<div class="line"><span class="keywordtype">void</span> <a class="code hl_function" href="example_8c.html#a2cb7775f336a7cd8c195258bdcddd5ad">my_delay_ms</a>(uint16_t ms) {</div>
+<div class="line">    <span class="keywordflow">while</span>(ms--) _delay_ms(1);</div>
+<div class="line">}</div>
+<div class="ttc" id="aexample_8c_html_a06eb0b802bf229b0413c594aa7f61e86"><div class="ttname"><a href="example_8c.html#a06eb0b802bf229b0413c594aa7f61e86">icone_bateria</a></div><div class="ttdeci">uint8_t icone_bateria[8]</div><div class="ttdoc">Ícone de bateria com carga parcial.</div><div class="ttdef"><b>Definição</b> example.c:32</div></div>
+<div class="ttc" id="aexample_8c_html_a1449614ce53eb03f6d2dded93cc6d03b"><div class="ttname"><a href="example_8c.html#a1449614ce53eb03f6d2dded93cc6d03b">on_twi_complete</a></div><div class="ttdeci">void on_twi_complete(TWI_Status_t status, const uint8_t *data, size_t length)</div><div class="ttdoc">Callback de interrupção do driver TWI. Chamado automaticamente quando uma transmissão I2C é finalizad...</div><div class="ttdef"><b>Definição</b> example.c:112</div></div>
+<div class="ttc" id="aexample_8c_html_a2cb7775f336a7cd8c195258bdcddd5ad"><div class="ttname"><a href="example_8c.html#a2cb7775f336a7cd8c195258bdcddd5ad">my_delay_ms</a></div><div class="ttdeci">void my_delay_ms(uint16_t ms)</div><div class="ttdoc">Ponte de Tempo (Delay).</div><div class="ttdef"><b>Definição</b> example.c:146</div></div>
+<div class="ttc" id="aexample_8c_html_a323f5c8076bcc1d2f1ff2c9c8cf2fb07"><div class="ttname"><a href="example_8c.html#a323f5c8076bcc1d2f1ff2c9c8cf2fb07">display</a></div><div class="ttdeci">lcd_t display</div><div class="ttdoc">Instância global do LCD (Objeto de controle).</div><div class="ttdef"><b>Definição</b> example.c:50</div></div>
+<div class="ttc" id="aexample_8c_html_a3ad8fe5813ce14841ad693dc09f3da6f"><div class="ttname"><a href="example_8c.html#a3ad8fe5813ce14841ad693dc09f3da6f">my_i2c_write</a></div><div class="ttdeci">int8_t my_i2c_write(uint8_t addr, uint8_t data)</div><div class="ttdoc">Ponte I2C para a biblioteca LCD.</div><div class="ttdef"><b>Definição</b> example.c:126</div></div>
+<div class="ttc" id="aexample_8c_html_a444cb63f21134eeceb68b0aada2cf064"><div class="ttname"><a href="example_8c.html#a444cb63f21134eeceb68b0aada2cf064">twi_busy</a></div><div class="ttdeci">volatile uint8_t twi_busy</div><div class="ttdoc">Flag de controle de fluxo para o barramento TWI.</div><div class="ttdef"><b>Definição</b> example.c:23</div></div>
+<div class="ttc" id="aexample_8c_html_a64c2c4190f4937cb5c482b29f95e79c4"><div class="ttname"><a href="example_8c.html#a64c2c4190f4937cb5c482b29f95e79c4">bloco_cheio</a></div><div class="ttdeci">uint8_t bloco_cheio[8]</div><div class="ttdoc">Bloco sólido preenchido para barras de progresso.</div><div class="ttdef"><b>Definição</b> example.c:44</div></div>
+<div class="ttc" id="aexample_8c_html_a840291bc02cba5474a4cb46a9b9566fe"><div class="ttname"><a href="example_8c.html#a840291bc02cba5474a4cb46a9b9566fe">main</a></div><div class="ttdeci">int main(void)</div><div class="ttdoc">Ponto de entrada principal da aplicação.</div><div class="ttdef"><b>Definição</b> example.c:60</div></div>
+<div class="ttc" id="alcd__i2c_8h_html"><div class="ttname"><a href="lcd__i2c_8h.html">lcd_i2c.h</a></div><div class="ttdoc">API pública para controle de displays LCD via interface I2C (PCF8574).</div></div>
+<div class="ttc" id="alcd__i2c_8h_html_a0c40ab9494b131bcdcbdf5f6e83d9059"><div class="ttname"><a href="lcd__i2c_8h.html#a0c40ab9494b131bcdcbdf5f6e83d9059">lcd_clear_display</a></div><div class="ttdeci">void lcd_clear_display(lcd_t *handle)</div><div class="ttdoc">Limpa todo o conteúdo do display e retorna o cursor para a posição (0,0).</div><div class="ttdef"><b>Definição</b> lcd_i2c.c:91</div></div>
+<div class="ttc" id="alcd__i2c_8h_html_a6f89a9147025038e681d0dc32dd978fc"><div class="ttname"><a href="lcd__i2c_8h.html#a6f89a9147025038e681d0dc32dd978fc">lcd_init</a></div><div class="ttdeci">lcd_status_t lcd_init(lcd_t *handle)</div><div class="ttdoc">Inicializa o display LCD via interface I2C (PCF8574).</div><div class="ttdef"><b>Definição</b> lcd_i2c.c:48</div></div>
+<div class="ttc" id="alcd__i2c_8h_html_a8cc0e36fe79300b0cd5a712ebe7bc0ff"><div class="ttname"><a href="lcd__i2c_8h.html#a8cc0e36fe79300b0cd5a712ebe7bc0ff">lcd_write_char</a></div><div class="ttdeci">void lcd_write_char(lcd_t *handle, char data)</div><div class="ttdoc">Escreve um único caractere na posição atual do cursor (RS=1).</div><div class="ttdef"><b>Definição</b> lcd_i2c.c:78</div></div>
+<div class="ttc" id="alcd__i2c_8h_html_ac71a7c694ced50dd7be6b6137851a6a2"><div class="ttname"><a href="lcd__i2c_8h.html#ac71a7c694ced50dd7be6b6137851a6a2">lcd_set_cursor</a></div><div class="ttdeci">void lcd_set_cursor(lcd_t *handle, uint8_t col, uint8_t row)</div><div class="ttdoc">Posiciona o cursor em uma coordenada específica (coluna, linha).</div><div class="ttdef"><b>Definição</b> lcd_i2c.c:86</div></div>
+<div class="ttc" id="alcd__i2c_8h_html_acca2aca79645c0b9e2e5e815d4e6ce5c"><div class="ttname"><a href="lcd__i2c_8h.html#acca2aca79645c0b9e2e5e815d4e6ce5c">lcd_create_custom_char</a></div><div class="ttdeci">void lcd_create_custom_char(lcd_t *handle, uint8_t location, uint8_t charmap[])</div><div class="ttdoc">Cria um caractere personalizado na memória CGRAM do LCD.</div><div class="ttdef"><b>Definição</b> lcd_i2c.c:109</div></div>
+<div class="ttc" id="alcd__i2c_8h_html_ae48661d1148057da43e0599cb2c4cc1d"><div class="ttname"><a href="lcd__i2c_8h.html#ae48661d1148057da43e0599cb2c4cc1d">lcd_write_string</a></div><div class="ttdeci">void lcd_write_string(lcd_t *handle, const char *str)</div><div class="ttdoc">Escreve uma string de caracteres a partir da posição atual do cursor.</div><div class="ttdef"><b>Definição</b> lcd_i2c.c:82</div></div>
+<div class="ttc" id="alcd__i2c__types_8h_html_a5aabac5c461d4e5e3a061d712cf46c87a2e325be9b04f7628f3d194d1c005fd7b"><div class="ttname"><a href="lcd__i2c__types_8h.html#a5aabac5c461d4e5e3a061d712cf46c87a2e325be9b04f7628f3d194d1c005fd7b">LCD_BACKLIGHT_ON</a></div><div class="ttdeci">@ LCD_BACKLIGHT_ON</div><div class="ttdef"><b>Definição</b> lcd_i2c_types.h:37</div></div>
+<div class="ttc" id="alcd__i2c__types_8h_html_aea357e33cccf8705623584ab00bd7bacab4ae24c39f9cff11aff86d245c3e28ce"><div class="ttname"><a href="lcd__i2c__types_8h.html#aea357e33cccf8705623584ab00bd7bacab4ae24c39f9cff11aff86d245c3e28ce">LCD_OK</a></div><div class="ttdeci">@ LCD_OK</div><div class="ttdef"><b>Definição</b> lcd_i2c_types.h:24</div></div>
+<div class="ttc" id="astructlcd__t_html"><div class="ttname"><a href="structlcd__t.html">lcd_t</a></div><div class="ttdoc">Estrutura de controle (Handle) do objeto LCD.</div><div class="ttdef"><b>Definição</b> lcd_i2c_types.h:58</div></div>
+</div><!-- fragment --> </div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- HTML footer for doxygen 1.16.1-->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Gerado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
+  </ul>
+</div>

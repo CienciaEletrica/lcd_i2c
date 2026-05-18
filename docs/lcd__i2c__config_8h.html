@@ -1,0 +1,501 @@
+<!-- HTML header for doxygen 1.16.1-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-BR">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.16.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta charset="utf-8">
+<title>AVR LCD I2C Library (PCF8574): Referência do Arquivo inc/lcd_i2c_config.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="stylesheet.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+  <table cellspacing="0" cellpadding="0">
+   <tbody>
+   <tr style="height: 56px;">
+    <td id="projectalign" style="padding-left: 0.5em;">
+     <div id="projectname">AVR LCD I2C Library (PCF8574) - YouTube: Ciência Elétrica</div>
+     <div id="projectbrief">Biblioteca para Microcontroladores AVR</div>
+    </td>
+   </tr>
+   </tbody>
+  </table>
+  </div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.16.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Busca',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('lcd__i2c__config_8h.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Carregando...</div>
+<div class="SRStatus" id="Searching">Procurando...</div>
+<div class="SRStatus" id="NoMatches">Nenhuma entrada encontrado</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Referência do Arquivo lcd_i2c_config.h</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Definições de hardware, mapeamento de pinos e comandos do LCD.  
+<a href="#details">Mais...</a></p>
+<div class="textblock"><div class="dynheader">
+Este grafo mostra quais arquivos estão direta ou indiretamente relacionados com esse arquivo:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="lcd__i2c__config_8h__dep__incl.svg" width="264" height="187"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+<p><a href="lcd__i2c__config_8h_source.html">Ir para o código-fonte desse arquivo.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-define-members" class="groupheader"><a id="define-members" name="define-members"></a>
+Definições e Macros</h2></td></tr>
+<tr class="memitem:a43bafb28b29491ec7f871319b5a3b2f8" id="r_a43bafb28b29491ec7f871319b5a3b2f8"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a43bafb28b29491ec7f871319b5a3b2f8">F_CPU</a>&#160;&#160;&#160;16000000UL</td></tr>
+<tr class="memdesc:a43bafb28b29491ec7f871319b5a3b2f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clock do sistema padrão (16 MHz) caso não definido pelo compilador/IDE.  <br /></td></tr>
+<tr class="memitem:a0debc1e7ef67b41168472bff29658c59" id="r_a0debc1e7ef67b41168472bff29658c59"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a0debc1e7ef67b41168472bff29658c59">LCD_DEFAULT_ADDR</a>&#160;&#160;&#160;0x27</td></tr>
+<tr class="memdesc:a0debc1e7ef67b41168472bff29658c59"><td class="mdescLeft">&#160;</td><td class="mdescRight">Endereço I2C padrão para a maioria dos módulos PCF8574 comerciais.  <br /></td></tr>
+<tr id="define-members-0" class="groupHeader"><td colspan="2"><div class="groupHeader">Mapeamento de Pinos</div></td></tr>
+<tr><td colspan="2" class="ititle"><div class="groupText"><p>Baseado no layout padrão dos adaptadores I2C "IIC/I2C/TWI Serial Interface". </p>
+</div></td></tr>
+<tr class="memitem:a6ac777950db576df62346a5a7da5b3a7" id="r_a6ac777950db576df62346a5a7da5b3a7"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a6ac777950db576df62346a5a7da5b3a7">LCD_PIN_RS</a>&#160;&#160;&#160;(1 &lt;&lt; 0)</td></tr>
+<tr class="memitem:a74b224af2a7729172a64fbf0e5c2d400" id="r_a74b224af2a7729172a64fbf0e5c2d400"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a74b224af2a7729172a64fbf0e5c2d400">LCD_PIN_RW</a>&#160;&#160;&#160;(1 &lt;&lt; 1)</td></tr>
+<tr class="memitem:a2f5a69ed197584e7897bb7156a5e78fd" id="r_a2f5a69ed197584e7897bb7156a5e78fd"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a2f5a69ed197584e7897bb7156a5e78fd">LCD_PIN_EN</a>&#160;&#160;&#160;(1 &lt;&lt; 2)</td></tr>
+<tr class="memitem:a61e1449c1affc81b77c9448f3efe36c7" id="r_a61e1449c1affc81b77c9448f3efe36c7"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a61e1449c1affc81b77c9448f3efe36c7">LCD_PIN_BL</a>&#160;&#160;&#160;(1 &lt;&lt; 3)</td></tr>
+<tr id="define-members-1" class="groupHeader"><td colspan="2"><div class="groupHeader">Conjunto de Instruções</div></td></tr>
+<tr><td colspan="2" class="ititle"><div class="groupText"><p>Comandos base do controlador HD44780. </p>
+</div></td></tr>
+<tr class="memitem:a90be4a38aaa8198491f61f7880a74d54" id="r_a90be4a38aaa8198491f61f7880a74d54"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a90be4a38aaa8198491f61f7880a74d54">LCD_CMD_CLEAR_DISPLAY</a>&#160;&#160;&#160;0x01</td></tr>
+<tr class="memitem:ae32ef151f1ec0c5690b232693e88be47" id="r_ae32ef151f1ec0c5690b232693e88be47"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#ae32ef151f1ec0c5690b232693e88be47">LCD_CMD_RETURN_HOME</a>&#160;&#160;&#160;0x02</td></tr>
+<tr class="memitem:a6a93b83adf7a5bf9136d378a79d7c924" id="r_a6a93b83adf7a5bf9136d378a79d7c924"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a6a93b83adf7a5bf9136d378a79d7c924">LCD_CMD_ENTRY_MODE_SET</a>&#160;&#160;&#160;0x04</td></tr>
+<tr class="memitem:a7732a0db73198f074a014f9a8b2141a8" id="r_a7732a0db73198f074a014f9a8b2141a8"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a7732a0db73198f074a014f9a8b2141a8">LCD_CMD_DISPLAY_CONTROL</a>&#160;&#160;&#160;0x08</td></tr>
+<tr class="memitem:a41792c8b4bc926f2e6cb3103d94b60ee" id="r_a41792c8b4bc926f2e6cb3103d94b60ee"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a41792c8b4bc926f2e6cb3103d94b60ee">LCD_CMD_CURSOR_SHIFT</a>&#160;&#160;&#160;0x10</td></tr>
+<tr class="memitem:a5cdc0f50b0d93720dda1511e54ab30a7" id="r_a5cdc0f50b0d93720dda1511e54ab30a7"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a5cdc0f50b0d93720dda1511e54ab30a7">LCD_CMD_FUNCTION_SET</a>&#160;&#160;&#160;0x20</td></tr>
+<tr class="memitem:a9df3864016c404568ede6c5392380d3b" id="r_a9df3864016c404568ede6c5392380d3b"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a9df3864016c404568ede6c5392380d3b">LCD_CMD_SET_CGRAM_ADDR</a>&#160;&#160;&#160;0x40</td></tr>
+<tr class="memitem:acb84c6cb50674d381ca2811f1c97048a" id="r_acb84c6cb50674d381ca2811f1c97048a"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#acb84c6cb50674d381ca2811f1c97048a">LCD_CMD_SET_DDRAM_ADDR</a>&#160;&#160;&#160;0x80</td></tr>
+<tr id="define-members-2" class="groupHeader"><td colspan="2"><div class="groupHeader">Flags de Operação</div></td></tr>
+<tr><td colspan="2" class="ititle"><div class="groupText"><p>Bits de configuração para serem combinados com os comandos base. </p>
+</div></td></tr>
+<tr class="memitem:a2bf76da51013fb12e30a2338c558c057" id="r_a2bf76da51013fb12e30a2338c558c057"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a2bf76da51013fb12e30a2338c558c057">LCD_ENTRY_LEFT</a>&#160;&#160;&#160;0x02</td></tr>
+<tr class="memitem:a6b886c33134f72e1b3a557391a07316f" id="r_a6b886c33134f72e1b3a557391a07316f"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a6b886c33134f72e1b3a557391a07316f">LCD_ENTRY_SHIFT_DECREMENT</a>&#160;&#160;&#160;0x00</td></tr>
+<tr class="memitem:a846dac5d1bb72bef7a76ee110c0445b6" id="r_a846dac5d1bb72bef7a76ee110c0445b6"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a846dac5d1bb72bef7a76ee110c0445b6">LCD_DISPLAY_ON</a>&#160;&#160;&#160;0x04</td></tr>
+<tr class="memitem:a8dae7021acb10d4e5f8458a5fba78729" id="r_a8dae7021acb10d4e5f8458a5fba78729"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a8dae7021acb10d4e5f8458a5fba78729">LCD_CURSOR_ON</a>&#160;&#160;&#160;0x02</td></tr>
+<tr class="memitem:a654ab1d84354662d394a62be3b2230d1" id="r_a654ab1d84354662d394a62be3b2230d1"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a654ab1d84354662d394a62be3b2230d1">LCD_BLINK_ON</a>&#160;&#160;&#160;0x01</td></tr>
+<tr id="define-members-3" class="groupHeader"><td colspan="2"><div class="groupHeader">Temporização (Timing)</div></td></tr>
+<tr><td colspan="2" class="ititle"><div class="groupText"><p>Tempos mínimos baseados no datasheet para garantir a execução dos comandos. </p>
+</div></td></tr>
+<tr class="memitem:a967f368c9f35eb63435faa8d9b5eb451" id="r_a967f368c9f35eb63435faa8d9b5eb451"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a967f368c9f35eb63435faa8d9b5eb451">LCD_DELAY_INIT_MS</a>&#160;&#160;&#160;50</td></tr>
+<tr class="memitem:a84fc4fa469c6c6d8b8063827af27c77d" id="r_a84fc4fa469c6c6d8b8063827af27c77d"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a84fc4fa469c6c6d8b8063827af27c77d">LCD_DELAY_COMMAND_US</a>&#160;&#160;&#160;100</td></tr>
+<tr class="memitem:a1c3300dbebc96d78415832dae6507b51" id="r_a1c3300dbebc96d78415832dae6507b51"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a1c3300dbebc96d78415832dae6507b51">LCD_DELAY_CLEAR_MS</a>&#160;&#160;&#160;2</td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Descrição detalhada</h2>
+<div class="textblock"><p>Definições de hardware, mapeamento de pinos e comandos do LCD. </p>
+<dl class="section author"><dt>Autor</dt><dd>Tiago Henrique dos Santos/Ciência Elétrica </dd></dl>
+<dl class="section date"><dt>Data</dt><dd>2026</dd></dl>
+<p>Este arquivo contém as constantes de configuração para o barramento I2C, mapeamento físico entre o PCF8574 e o controlador HD44780, além dos códigos de instrução do datasheet do LCD. </p>
+</div><a name="doc-define-members" id="doc-define-members"></a><h2 id="header-doc-define-members" class="groupheader">Definições e macros</h2>
+<a id="a43bafb28b29491ec7f871319b5a3b2f8" name="a43bafb28b29491ec7f871319b5a3b2f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a43bafb28b29491ec7f871319b5a3b2f8">&#9670;&#160;</a></span>F_CPU</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define F_CPU&#160;&#160;&#160;16000000UL</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Clock do sistema padrão (16 MHz) caso não definido pelo compilador/IDE. </p>
+
+</div>
+</div>
+<a id="a654ab1d84354662d394a62be3b2230d1" name="a654ab1d84354662d394a62be3b2230d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a654ab1d84354662d394a62be3b2230d1">&#9670;&#160;</a></span>LCD_BLINK_ON</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LCD_BLINK_ON&#160;&#160;&#160;0x01</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Liga o efeito de bloco piscante no cursor </p>
+
+</div>
+</div>
+<a id="a90be4a38aaa8198491f61f7880a74d54" name="a90be4a38aaa8198491f61f7880a74d54"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a90be4a38aaa8198491f61f7880a74d54">&#9670;&#160;</a></span>LCD_CMD_CLEAR_DISPLAY</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LCD_CMD_CLEAR_DISPLAY&#160;&#160;&#160;0x01</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Limpa display e retorna cursor ao início </p>
+
+</div>
+</div>
+<a id="a41792c8b4bc926f2e6cb3103d94b60ee" name="a41792c8b4bc926f2e6cb3103d94b60ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a41792c8b4bc926f2e6cb3103d94b60ee">&#9670;&#160;</a></span>LCD_CMD_CURSOR_SHIFT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LCD_CMD_CURSOR_SHIFT&#160;&#160;&#160;0x10</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Move cursor ou desloca o conteúdo exibido </p>
+
+</div>
+</div>
+<a id="a7732a0db73198f074a014f9a8b2141a8" name="a7732a0db73198f074a014f9a8b2141a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7732a0db73198f074a014f9a8b2141a8">&#9670;&#160;</a></span>LCD_CMD_DISPLAY_CONTROL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LCD_CMD_DISPLAY_CONTROL&#160;&#160;&#160;0x08</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Liga/Desliga display, cursor e blink </p>
+
+</div>
+</div>
+<a id="a6a93b83adf7a5bf9136d378a79d7c924" name="a6a93b83adf7a5bf9136d378a79d7c924"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6a93b83adf7a5bf9136d378a79d7c924">&#9670;&#160;</a></span>LCD_CMD_ENTRY_MODE_SET</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LCD_CMD_ENTRY_MODE_SET&#160;&#160;&#160;0x04</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Configura direção de movimento do cursor </p>
+
+</div>
+</div>
+<a id="a5cdc0f50b0d93720dda1511e54ab30a7" name="a5cdc0f50b0d93720dda1511e54ab30a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5cdc0f50b0d93720dda1511e54ab30a7">&#9670;&#160;</a></span>LCD_CMD_FUNCTION_SET</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LCD_CMD_FUNCTION_SET&#160;&#160;&#160;0x20</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Configura barramento (4-bits) e nº de linhas </p>
+
+</div>
+</div>
+<a id="ae32ef151f1ec0c5690b232693e88be47" name="ae32ef151f1ec0c5690b232693e88be47"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae32ef151f1ec0c5690b232693e88be47">&#9670;&#160;</a></span>LCD_CMD_RETURN_HOME</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LCD_CMD_RETURN_HOME&#160;&#160;&#160;0x02</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Retorna cursor ao início sem limpar dados </p>
+
+</div>
+</div>
+<a id="a9df3864016c404568ede6c5392380d3b" name="a9df3864016c404568ede6c5392380d3b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9df3864016c404568ede6c5392380d3b">&#9670;&#160;</a></span>LCD_CMD_SET_CGRAM_ADDR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LCD_CMD_SET_CGRAM_ADDR&#160;&#160;&#160;0x40</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Define endereço para memória de caracteres customizados </p>
+
+</div>
+</div>
+<a id="acb84c6cb50674d381ca2811f1c97048a" name="acb84c6cb50674d381ca2811f1c97048a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acb84c6cb50674d381ca2811f1c97048a">&#9670;&#160;</a></span>LCD_CMD_SET_DDRAM_ADDR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LCD_CMD_SET_DDRAM_ADDR&#160;&#160;&#160;0x80</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Define endereço para memória de exibição (vídeo) </p>
+
+</div>
+</div>
+<a id="a8dae7021acb10d4e5f8458a5fba78729" name="a8dae7021acb10d4e5f8458a5fba78729"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8dae7021acb10d4e5f8458a5fba78729">&#9670;&#160;</a></span>LCD_CURSOR_ON</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LCD_CURSOR_ON&#160;&#160;&#160;0x02</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Liga a linha de sublinhado do cursor </p>
+
+</div>
+</div>
+<a id="a0debc1e7ef67b41168472bff29658c59" name="a0debc1e7ef67b41168472bff29658c59"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0debc1e7ef67b41168472bff29658c59">&#9670;&#160;</a></span>LCD_DEFAULT_ADDR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LCD_DEFAULT_ADDR&#160;&#160;&#160;0x27</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Endereço I2C padrão para a maioria dos módulos PCF8574 comerciais. </p>
+
+</div>
+</div>
+<a id="a1c3300dbebc96d78415832dae6507b51" name="a1c3300dbebc96d78415832dae6507b51"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c3300dbebc96d78415832dae6507b51">&#9670;&#160;</a></span>LCD_DELAY_CLEAR_MS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LCD_DELAY_CLEAR_MS&#160;&#160;&#160;2</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Tempo estendido para Clear e Return Home </p>
+
+</div>
+</div>
+<a id="a84fc4fa469c6c6d8b8063827af27c77d" name="a84fc4fa469c6c6d8b8063827af27c77d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a84fc4fa469c6c6d8b8063827af27c77d">&#9670;&#160;</a></span>LCD_DELAY_COMMAND_US</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LCD_DELAY_COMMAND_US&#160;&#160;&#160;100</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Tempo padrão para comandos simples </p>
+
+</div>
+</div>
+<a id="a967f368c9f35eb63435faa8d9b5eb451" name="a967f368c9f35eb63435faa8d9b5eb451"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a967f368c9f35eb63435faa8d9b5eb451">&#9670;&#160;</a></span>LCD_DELAY_INIT_MS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LCD_DELAY_INIT_MS&#160;&#160;&#160;50</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Tempo de estabilização do VCC (Power-on) </p>
+
+</div>
+</div>
+<a id="a846dac5d1bb72bef7a76ee110c0445b6" name="a846dac5d1bb72bef7a76ee110c0445b6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a846dac5d1bb72bef7a76ee110c0445b6">&#9670;&#160;</a></span>LCD_DISPLAY_ON</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LCD_DISPLAY_ON&#160;&#160;&#160;0x04</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Liga a exibição dos caracteres </p>
+
+</div>
+</div>
+<a id="a2bf76da51013fb12e30a2338c558c057" name="a2bf76da51013fb12e30a2338c558c057"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2bf76da51013fb12e30a2338c558c057">&#9670;&#160;</a></span>LCD_ENTRY_LEFT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LCD_ENTRY_LEFT&#160;&#160;&#160;0x02</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Incremento automático à esquerda </p>
+
+</div>
+</div>
+<a id="a6b886c33134f72e1b3a557391a07316f" name="a6b886c33134f72e1b3a557391a07316f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6b886c33134f72e1b3a557391a07316f">&#9670;&#160;</a></span>LCD_ENTRY_SHIFT_DECREMENT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LCD_ENTRY_SHIFT_DECREMENT&#160;&#160;&#160;0x00</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Deslocamento de tela desligado </p>
+
+</div>
+</div>
+<a id="a61e1449c1affc81b77c9448f3efe36c7" name="a61e1449c1affc81b77c9448f3efe36c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a61e1449c1affc81b77c9448f3efe36c7">&#9670;&#160;</a></span>LCD_PIN_BL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LCD_PIN_BL&#160;&#160;&#160;(1 &lt;&lt; 3)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Backlight (P3) - Controlado via firmware </p>
+
+</div>
+</div>
+<a id="a2f5a69ed197584e7897bb7156a5e78fd" name="a2f5a69ed197584e7897bb7156a5e78fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f5a69ed197584e7897bb7156a5e78fd">&#9670;&#160;</a></span>LCD_PIN_EN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LCD_PIN_EN&#160;&#160;&#160;(1 &lt;&lt; 2)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Enable (P2) </p>
+
+</div>
+</div>
+<a id="a6ac777950db576df62346a5a7da5b3a7" name="a6ac777950db576df62346a5a7da5b3a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ac777950db576df62346a5a7da5b3a7">&#9670;&#160;</a></span>LCD_PIN_RS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LCD_PIN_RS&#160;&#160;&#160;(1 &lt;&lt; 0)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Registro Select (P0) </p>
+
+</div>
+</div>
+<a id="a74b224af2a7729172a64fbf0e5c2d400" name="a74b224af2a7729172a64fbf0e5c2d400"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a74b224af2a7729172a64fbf0e5c2d400">&#9670;&#160;</a></span>LCD_PIN_RW</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LCD_PIN_RW&#160;&#160;&#160;(1 &lt;&lt; 1)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Read/Write (P1) </p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- HTML footer for doxygen 1.16.1-->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_bfccd401955b95cf8c75461437045ac0.html">inc</a></li><li class="navelem"><a href="lcd__i2c__config_8h.html">lcd_i2c_config.h</a></li>
+    <li class="footer">Gerado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
+  </ul>
+</div>

@@ -1,0 +1,165 @@
+<!-- HTML header for doxygen 1.16.1-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-BR">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.16.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta charset="utf-8">
+<title>AVR LCD I2C Library (PCF8574): Código-Fonte de inc/lcd_i2c_types.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="stylesheet.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+  <table cellspacing="0" cellpadding="0">
+   <tbody>
+   <tr style="height: 56px;">
+    <td id="projectalign" style="padding-left: 0.5em;">
+     <div id="projectname">AVR LCD I2C Library (PCF8574) - YouTube: Ciência Elétrica</div>
+     <div id="projectbrief">Biblioteca para Microcontroladores AVR</div>
+    </td>
+   </tr>
+   </tbody>
+  </table>
+  </div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.16.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Busca',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('lcd__i2c__types_8h_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Carregando...</div>
+<div class="SRStatus" id="Searching">Procurando...</div>
+<div class="SRStatus" id="NoMatches">Nenhuma entrada encontrado</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">lcd_i2c_types.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="lcd__i2c__types_8h.html">Ir para a documentação desse arquivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#ifndef LCD_I2C_TYPES_H_</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#define LCD_I2C_TYPES_H_</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &lt;stdbool.h&gt;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span></div>
+<div class="foldopen" id="foldopen00023" data-start="{" data-end="};">
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="lcd__i2c__types_8h.html#aea357e33cccf8705623584ab00bd7bac">   23</a></span><span class="keyword">typedef</span> <span class="keyword">enum</span> {</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="lcd__i2c__types_8h.html#aea357e33cccf8705623584ab00bd7bacab4ae24c39f9cff11aff86d245c3e28ce">   24</a></span>    <a class="code hl_enumvalue" href="lcd__i2c__types_8h.html#aea357e33cccf8705623584ab00bd7bacab4ae24c39f9cff11aff86d245c3e28ce">LCD_OK</a> = 0,    </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="lcd__i2c__types_8h.html#aea357e33cccf8705623584ab00bd7baca436765093a97917433c52af526c7b4fc">   25</a></span>    <a class="code hl_enumvalue" href="lcd__i2c__types_8h.html#aea357e33cccf8705623584ab00bd7baca436765093a97917433c52af526c7b4fc">LCD_ERROR</a>,     </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="lcd__i2c__types_8h.html#aea357e33cccf8705623584ab00bd7bacae882aab8cbbe71a56948b0ac8132d93f">   26</a></span>    <a class="code hl_enumvalue" href="lcd__i2c__types_8h.html#aea357e33cccf8705623584ab00bd7bacae882aab8cbbe71a56948b0ac8132d93f">LCD_BUSY</a>,      </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="lcd__i2c__types_8h.html#aea357e33cccf8705623584ab00bd7bacacbad7721a406c18b63fb3acb99adb532">   27</a></span>    <a class="code hl_enumvalue" href="lcd__i2c__types_8h.html#aea357e33cccf8705623584ab00bd7bacacbad7721a406c18b63fb3acb99adb532">LCD_TIMEOUT</a>    </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>} <a class="code hl_enumeration" href="lcd__i2c__types_8h.html#aea357e33cccf8705623584ab00bd7bac">lcd_status_t</a>;</div>
+</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span></div>
+<div class="foldopen" id="foldopen00035" data-start="{" data-end="};">
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="lcd__i2c__types_8h.html#a5aabac5c461d4e5e3a061d712cf46c87">   35</a></span><span class="keyword">typedef</span> <span class="keyword">enum</span> {</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="lcd__i2c__types_8h.html#a5aabac5c461d4e5e3a061d712cf46c87aa31588f824b97230fdfdc3eb2cd6238a">   36</a></span>    <a class="code hl_enumvalue" href="lcd__i2c__types_8h.html#a5aabac5c461d4e5e3a061d712cf46c87aa31588f824b97230fdfdc3eb2cd6238a">LCD_BACKLIGHT_OFF</a> = 0,    </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="lcd__i2c__types_8h.html#a5aabac5c461d4e5e3a061d712cf46c87a2e325be9b04f7628f3d194d1c005fd7b">   37</a></span>    <a class="code hl_enumvalue" href="lcd__i2c__types_8h.html#a5aabac5c461d4e5e3a061d712cf46c87a2e325be9b04f7628f3d194d1c005fd7b">LCD_BACKLIGHT_ON</a>  = 0x08  </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>} <a class="code hl_enumeration" href="lcd__i2c__types_8h.html#a5aabac5c461d4e5e3a061d712cf46c87">lcd_backlight_t</a>;</div>
+</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="lcd__i2c__types_8h.html#a575de770ba7a52485fdc53adda6311c9">   50</a></span><span class="keyword">typedef</span> int8_t (*<a class="code hl_typedef" href="lcd__i2c__types_8h.html#a575de770ba7a52485fdc53adda6311c9">lcd_i2c_write_ptr</a>)(uint8_t slave_addr, uint8_t data);</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span></div>
+<div class="foldopen" id="foldopen00058" data-start="{" data-end="};">
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="structlcd__t.html">   58</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="structlcd__t.html#a6cbf2c73ec29d386c82d732c2927b35e">   59</a></span>    uint8_t <a class="code hl_variable" href="structlcd__t.html#a6cbf2c73ec29d386c82d732c2927b35e">address</a>;            </div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="structlcd__t.html#ad28aac56c3c01ac1676321f544e94e8d">   60</a></span>    uint8_t <a class="code hl_variable" href="structlcd__t.html#ad28aac56c3c01ac1676321f544e94e8d">columns</a>;            </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="structlcd__t.html#ac8b3d24e81b5311e023652d913680d94">   61</a></span>    uint8_t <a class="code hl_variable" href="structlcd__t.html#ac8b3d24e81b5311e023652d913680d94">rows</a>;               </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="structlcd__t.html#a19e70f93729b8e973c0a9fab25cf25b6">   62</a></span>    uint8_t <a class="code hl_variable" href="structlcd__t.html#a19e70f93729b8e973c0a9fab25cf25b6">entry_mode</a>;         </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="structlcd__t.html#af6efe67e3b9ca17de923812524c2e968">   63</a></span>    uint8_t <a class="code hl_variable" href="structlcd__t.html#af6efe67e3b9ca17de923812524c2e968">display_ctrl</a>;       </div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="structlcd__t.html#a60553ffac94d7144cbd2ec3014a9fc13">   64</a></span>    <a class="code hl_enumeration" href="lcd__i2c__types_8h.html#a5aabac5c461d4e5e3a061d712cf46c87">lcd_backlight_t</a> <a class="code hl_variable" href="structlcd__t.html#a60553ffac94d7144cbd2ec3014a9fc13">backlight</a>;  </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    </div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="structlcd__t.html#a44fddc0a2568be9e444bd4668d7464fb">   70</a></span>    <a class="code hl_typedef" href="lcd__i2c__types_8h.html#a575de770ba7a52485fdc53adda6311c9">lcd_i2c_write_ptr</a> <a class="code hl_variable" href="structlcd__t.html#a44fddc0a2568be9e444bd4668d7464fb">i2c_write</a>; </div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    </div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno"><a class="line" href="structlcd__t.html#a1d2266eb51b2ee936d9ada7fe35d3568">   76</a></span>    void (*<a class="code hl_variable" href="structlcd__t.html#a1d2266eb51b2ee936d9ada7fe35d3568">delay_ms</a>)(uint16_t ms);</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>} <a class="code hl_struct" href="structlcd__t.html">lcd_t</a>;</div>
+</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span><span class="preprocessor">#endif </span><span class="comment">/* LCD_I2C_TYPES_H_ */</span><span class="preprocessor"></span></div>
+<div class="ttc" id="alcd__i2c__types_8h_html_a575de770ba7a52485fdc53adda6311c9"><div class="ttname"><a href="lcd__i2c__types_8h.html#a575de770ba7a52485fdc53adda6311c9">lcd_i2c_write_ptr</a></div><div class="ttdeci">int8_t(* lcd_i2c_write_ptr)(uint8_t slave_addr, uint8_t data)</div><div class="ttdoc">Definição da assinatura da função de escrita I2C (Ponteiro de Função).</div><div class="ttdef"><b>Definição</b> lcd_i2c_types.h:50</div></div>
+<div class="ttc" id="alcd__i2c__types_8h_html_a5aabac5c461d4e5e3a061d712cf46c87"><div class="ttname"><a href="lcd__i2c__types_8h.html#a5aabac5c461d4e5e3a061d712cf46c87">lcd_backlight_t</a></div><div class="ttdeci">lcd_backlight_t</div><div class="ttdoc">Estados possíveis para o controle da luz de fundo (Backlight).</div><div class="ttdef"><b>Definição</b> lcd_i2c_types.h:35</div></div>
+<div class="ttc" id="alcd__i2c__types_8h_html_a5aabac5c461d4e5e3a061d712cf46c87a2e325be9b04f7628f3d194d1c005fd7b"><div class="ttname"><a href="lcd__i2c__types_8h.html#a5aabac5c461d4e5e3a061d712cf46c87a2e325be9b04f7628f3d194d1c005fd7b">LCD_BACKLIGHT_ON</a></div><div class="ttdeci">@ LCD_BACKLIGHT_ON</div><div class="ttdef"><b>Definição</b> lcd_i2c_types.h:37</div></div>
+<div class="ttc" id="alcd__i2c__types_8h_html_a5aabac5c461d4e5e3a061d712cf46c87aa31588f824b97230fdfdc3eb2cd6238a"><div class="ttname"><a href="lcd__i2c__types_8h.html#a5aabac5c461d4e5e3a061d712cf46c87aa31588f824b97230fdfdc3eb2cd6238a">LCD_BACKLIGHT_OFF</a></div><div class="ttdeci">@ LCD_BACKLIGHT_OFF</div><div class="ttdef"><b>Definição</b> lcd_i2c_types.h:36</div></div>
+<div class="ttc" id="alcd__i2c__types_8h_html_aea357e33cccf8705623584ab00bd7bac"><div class="ttname"><a href="lcd__i2c__types_8h.html#aea357e33cccf8705623584ab00bd7bac">lcd_status_t</a></div><div class="ttdeci">lcd_status_t</div><div class="ttdoc">Status de retorno das funções da biblioteca.</div><div class="ttdef"><b>Definição</b> lcd_i2c_types.h:23</div></div>
+<div class="ttc" id="alcd__i2c__types_8h_html_aea357e33cccf8705623584ab00bd7baca436765093a97917433c52af526c7b4fc"><div class="ttname"><a href="lcd__i2c__types_8h.html#aea357e33cccf8705623584ab00bd7baca436765093a97917433c52af526c7b4fc">LCD_ERROR</a></div><div class="ttdeci">@ LCD_ERROR</div><div class="ttdef"><b>Definição</b> lcd_i2c_types.h:25</div></div>
+<div class="ttc" id="alcd__i2c__types_8h_html_aea357e33cccf8705623584ab00bd7bacab4ae24c39f9cff11aff86d245c3e28ce"><div class="ttname"><a href="lcd__i2c__types_8h.html#aea357e33cccf8705623584ab00bd7bacab4ae24c39f9cff11aff86d245c3e28ce">LCD_OK</a></div><div class="ttdeci">@ LCD_OK</div><div class="ttdef"><b>Definição</b> lcd_i2c_types.h:24</div></div>
+<div class="ttc" id="alcd__i2c__types_8h_html_aea357e33cccf8705623584ab00bd7bacacbad7721a406c18b63fb3acb99adb532"><div class="ttname"><a href="lcd__i2c__types_8h.html#aea357e33cccf8705623584ab00bd7bacacbad7721a406c18b63fb3acb99adb532">LCD_TIMEOUT</a></div><div class="ttdeci">@ LCD_TIMEOUT</div><div class="ttdef"><b>Definição</b> lcd_i2c_types.h:27</div></div>
+<div class="ttc" id="alcd__i2c__types_8h_html_aea357e33cccf8705623584ab00bd7bacae882aab8cbbe71a56948b0ac8132d93f"><div class="ttname"><a href="lcd__i2c__types_8h.html#aea357e33cccf8705623584ab00bd7bacae882aab8cbbe71a56948b0ac8132d93f">LCD_BUSY</a></div><div class="ttdeci">@ LCD_BUSY</div><div class="ttdef"><b>Definição</b> lcd_i2c_types.h:26</div></div>
+<div class="ttc" id="astructlcd__t_html"><div class="ttname"><a href="structlcd__t.html">lcd_t</a></div><div class="ttdoc">Estrutura de controle (Handle) do objeto LCD.</div><div class="ttdef"><b>Definição</b> lcd_i2c_types.h:58</div></div>
+<div class="ttc" id="astructlcd__t_html_a19e70f93729b8e973c0a9fab25cf25b6"><div class="ttname"><a href="structlcd__t.html#a19e70f93729b8e973c0a9fab25cf25b6">lcd_t::entry_mode</a></div><div class="ttdeci">uint8_t entry_mode</div><div class="ttdef"><b>Definição</b> lcd_i2c_types.h:62</div></div>
+<div class="ttc" id="astructlcd__t_html_a1d2266eb51b2ee936d9ada7fe35d3568"><div class="ttname"><a href="structlcd__t.html#a1d2266eb51b2ee936d9ada7fe35d3568">lcd_t::delay_ms</a></div><div class="ttdeci">void(* delay_ms)(uint16_t ms)</div><div class="ttdoc">Ponteiro para função de atraso em milissegundos. Utilizado para garantir a temporização correta duran...</div><div class="ttdef"><b>Definição</b> lcd_i2c_types.h:76</div></div>
+<div class="ttc" id="astructlcd__t_html_a44fddc0a2568be9e444bd4668d7464fb"><div class="ttname"><a href="structlcd__t.html#a44fddc0a2568be9e444bd4668d7464fb">lcd_t::i2c_write</a></div><div class="ttdeci">lcd_i2c_write_ptr i2c_write</div><div class="ttdoc">Ponteiro para a função de escrita I2C da HAL. Deve ser preenchido pelo usuário antes da inicialização...</div><div class="ttdef"><b>Definição</b> lcd_i2c_types.h:70</div></div>
+<div class="ttc" id="astructlcd__t_html_a60553ffac94d7144cbd2ec3014a9fc13"><div class="ttname"><a href="structlcd__t.html#a60553ffac94d7144cbd2ec3014a9fc13">lcd_t::backlight</a></div><div class="ttdeci">lcd_backlight_t backlight</div><div class="ttdef"><b>Definição</b> lcd_i2c_types.h:64</div></div>
+<div class="ttc" id="astructlcd__t_html_a6cbf2c73ec29d386c82d732c2927b35e"><div class="ttname"><a href="structlcd__t.html#a6cbf2c73ec29d386c82d732c2927b35e">lcd_t::address</a></div><div class="ttdeci">uint8_t address</div><div class="ttdef"><b>Definição</b> lcd_i2c_types.h:59</div></div>
+<div class="ttc" id="astructlcd__t_html_ac8b3d24e81b5311e023652d913680d94"><div class="ttname"><a href="structlcd__t.html#ac8b3d24e81b5311e023652d913680d94">lcd_t::rows</a></div><div class="ttdeci">uint8_t rows</div><div class="ttdef"><b>Definição</b> lcd_i2c_types.h:61</div></div>
+<div class="ttc" id="astructlcd__t_html_ad28aac56c3c01ac1676321f544e94e8d"><div class="ttname"><a href="structlcd__t.html#ad28aac56c3c01ac1676321f544e94e8d">lcd_t::columns</a></div><div class="ttdeci">uint8_t columns</div><div class="ttdef"><b>Definição</b> lcd_i2c_types.h:60</div></div>
+<div class="ttc" id="astructlcd__t_html_af6efe67e3b9ca17de923812524c2e968"><div class="ttname"><a href="structlcd__t.html#af6efe67e3b9ca17de923812524c2e968">lcd_t::display_ctrl</a></div><div class="ttdeci">uint8_t display_ctrl</div><div class="ttdef"><b>Definição</b> lcd_i2c_types.h:63</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- HTML footer for doxygen 1.16.1-->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_bfccd401955b95cf8c75461437045ac0.html">inc</a></li><li class="navelem"><a href="lcd__i2c__types_8h.html">lcd_i2c_types.h</a></li>
+    <li class="footer">Gerado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
+  </ul>
+</div>
